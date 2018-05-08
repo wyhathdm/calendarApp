@@ -1,7 +1,8 @@
-let month = createMonth(0, 2018);
-//console.log("hello2");
+function loadScr(){
 
-for(i=0; i<42; i++){
-    print(document.getElementById("day1"));
-    //print("hello");
+let month = createMonth(0, 2018);
+for(i = 0; i<42; i++){
+    $("#day"+i).html(i);
 }
+}
+
