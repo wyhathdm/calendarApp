@@ -1,5 +1,7 @@
-let curMon = 0;
-let curYear = 2018;
+let today = new Date();
+
+let curMon = today.getMonth();
+let curYear = today.getFullYear();
 
 function loadMon(){
 
