@@ -4,7 +4,7 @@ let monthNames = ["January", "February", "March", "April", "May", "June", "July"
 let weekDays = ["Su","M ","Tu","W ","Th","F ","Sa"];
 let monthStarts = [4,0,0,3,5,1,3,6,2,4,0,2];
 
-let events = []
+//let events = []
 
 
 //console.table(month);
@@ -125,4 +125,9 @@ return {
 
 let mon1 = createMonth(0, 2018);
 displayMonth(mon1);
+
+function createAndDisplayMonth(mon, year){
+    let newMonth = createMonth(mon, year);
+    displayMonth(newMonth);
+}
 
