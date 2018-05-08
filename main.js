@@ -23,7 +23,7 @@ function repString(string, amnt){
 }
 
 function countLeapYears(year){
-    return round(
+    return Math.round(
         (year-1970)/4
     )
 }
