@@ -62,7 +62,7 @@ def popArray(monVal, year):
 	monthLen = getMonLength(monVal, year)
 	monName = monthNames[monVal]
 	if monVal == 0:
-		prevMonthLen = getMonLength(monVal, year - 1)
+		prevMonthLen = getMonLength(11, year - 1)
 	else:
 		prevMonthLen = getMonLength((monVal-1)%12, year)
 			

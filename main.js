@@ -36,3 +36,22 @@ function getMonLength(monVal, year){
     return monthLen;
 }
 
+function popArray(monVal, year){
+    let startDay = monthStarts[monVal];
+    let offset = year-1970;
+    offset += countLeapYears(year);
+    startDay += offset;
+    startDay = startDay % 7;
+    let monthLen = getMonLength(monVal, year);
+    let monName = monthNames[monVal];
+    let prevMonthLen;
+
+    if(monVal == 0){
+        prevMonthLen = getMonLength(monVal-1, year - 1);
+    }
+    else{
+        prevMonthLen = getMonLength((monVal-1)%12, year);
+    }
+
+}
+
