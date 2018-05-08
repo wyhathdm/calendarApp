@@ -12,7 +12,7 @@ for(i=0; i<42; i++){
     month.push(null);
 }
 
-console.table(month);
+//console.table(month);
 
 function repString(string, amnt){
     let output = "";
@@ -53,5 +53,19 @@ function popArray(monVal, year){
         prevMonthLen = getMonLength((monVal-1)%12, year);
     }
 
+    for(i=startDay; i<startDay+monthLen; i++){
+        month[i] = (i-startDay)+1;
+    }
+
+    for(i=monthDay+startDay; i<42; i++){
+        month[i] = (i-(monthLen+startDay))+1;
+    }
+
+    let x = 0;
+    while(month[x] == null){
+        month[x] = prevMonthLen-startDay+x+1;
+        x++;
+    }
+    console.tab
 }
 
