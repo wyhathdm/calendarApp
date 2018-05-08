@@ -47,9 +47,21 @@ function displayMonth(mon, name, monVal, year, startDay, monLength){
 
     let wklist = "  ";
     for(wkday in weekDays){
-        wklist += wkday + "  ";
+        wklist += weekDays[wkday] + "  ";
     }
     print(wklist);
+
+    for(y = 0; y<6; y++){
+        let row = "";
+        for(z=0; z<7; z++){
+            space = "  ";
+            row += space + mon[y*7+z];
+            if(mon[y*7+z].toString().length == 1){
+                row += " ";
+            }
+        }
+     print(row);   
+    }
 }
 
 function popArray(monVal, year){
@@ -84,7 +96,12 @@ function popArray(monVal, year){
     }
 
     
-    console.table(month, 7);
+    //console.table(month, 7);
+    displayMonth(month, monName, monVal, year, startDay, monthLen);
+    for(i=0; i<42; i++){
+        month[i] = null;
+    }
+
 }
 
 popArray(0, 2018);
