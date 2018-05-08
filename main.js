@@ -22,3 +22,9 @@ function repString(string, amnt){
     return output;
 }
 
+function countLeapYears(year){
+    return round(
+        (year-1970)/4
+    )
+}
+
