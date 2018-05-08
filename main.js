@@ -6,11 +6,6 @@ let monthStarts = [4,0,0,3,5,1,3,6,2,4,0,2];
 
 let events = []
 
-let month = [];
-
-for(i=0; i<42; i++){
-    month.push(null);
-}
 
 //console.table(month);
 
@@ -40,7 +35,16 @@ function getMonLength(monVal, year){
     return monthLen;
 }
 
-function displayMonth(mon, name, monVal, year, startDay, monLength){
+function displayMonth(monObj){
+
+    let mon, name, monVal, year, startDay, monLength;
+    mon = monObj.month;
+    name = monObj.name;
+    monVal = monObj.value;
+    year = monObj.year;
+    startDay = monObj.startDay;
+    monLength = monObj.length;
+
     print(
         repString(" ", 6) + name + " " + year
     );
@@ -64,7 +68,13 @@ function displayMonth(mon, name, monVal, year, startDay, monLength){
     }
 }
 
-function popArray(monVal, year){
+function createMonth(monVal, year){
+    let month = [];
+
+    for(i=0; i<42; i++){
+    month.push(null);
+    }
+
     let startDay = monthStarts[monVal];
     let offset = year-1970;
     offset += countLeapYears(year);
@@ -97,12 +107,22 @@ function popArray(monVal, year){
 
     
     //console.table(month, 7);
-    displayMonth(month, monName, monVal, year, startDay, monthLen);
-    for(i=0; i<42; i++){
+    //displayMonth(month, monName, monVal, year, startDay, monthLen);
+    /*for(i=0; i<42; i++){
         month[i] = null;
-    }
+    }*/
+
+return {
+    'month': month,
+    'name': monName,
+    'value':monVal,
+    'year': year,
+    'startDay':startDay,
+    'length': monthLen
+}
 
 }
 
-popArray(0, 2018);
+let mon1 = createMonth(0, 2018);
+displayMonth(mon1);
 
