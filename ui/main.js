@@ -1,4 +1,4 @@
-let curMon = 1;
+let curMon = 0;
 let curYear = 2018;
 
 function loadMon(){
