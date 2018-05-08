@@ -28,3 +28,11 @@ function countLeapYears(year){
     )
 }
 
+function getMonLength(monVal, year){
+    let monthLen = calDaysInMonths[monVal];
+    if(monVal == 1 && year%4 == 0){
+        monthLen = 29;
+    }
+    return monthLen;
+}
+
