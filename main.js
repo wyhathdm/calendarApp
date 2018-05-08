@@ -22,6 +22,10 @@ function repString(string, amnt){
     return output;
 }
 
+function print(text){
+    console.log(text);
+}
+
 function countLeapYears(year){
     return Math.round(
         (year-1970)/4
@@ -36,6 +40,18 @@ function getMonLength(monVal, year){
     return monthLen;
 }
 
+function displayMonth(mon, name, monVal, year, startDay, monLength){
+    print(
+        repString(" ", 6) + name + " " + year
+    );
+
+    let wklist = "  ";
+    for(wkday in weekDays){
+        wklist += wkday + "  ";
+    }
+    print(wklist);
+}
+
 function popArray(monVal, year){
     let startDay = monthStarts[monVal];
     let offset = year-1970;
@@ -47,7 +63,7 @@ function popArray(monVal, year){
     let prevMonthLen;
 
     if(monVal == 0){
-        prevMonthLen = getMonLength(monVal-1, year - 1);
+        prevMonthLen = getMonLength(11, year - 1);
     }
     else{
         prevMonthLen = getMonLength((monVal-1)%12, year);
@@ -57,7 +73,7 @@ function popArray(monVal, year){
         month[i] = (i-startDay)+1;
     }
 
-    for(i=monthDay+startDay; i<42; i++){
+    for(i=monthLen+startDay; i<42; i++){
         month[i] = (i-(monthLen+startDay))+1;
     }
 
@@ -66,6 +82,10 @@ function popArray(monVal, year){
         month[x] = prevMonthLen-startDay+x+1;
         x++;
     }
-    console.tab
+
+    
+    console.table(month, 7);
 }
+
+popArray(0, 2018);
 
