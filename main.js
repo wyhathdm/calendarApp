@@ -3,7 +3,11 @@ let calDaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
 let monthStarts = [4, 0, 0, 3, 5, 1, 3, 6, 2, 4, 0, 2];
-
+let currentDate = new Date();
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth();
+let currentDay = currentDate.getDate();
+let currentMonthForStyle = currentDate.getMonth();
 //let events = []
 
 
@@ -35,37 +39,50 @@ function getMonLength(monVal, year) {
     return monthLen;
 }
 
-function displayMonth(monObj) {
+let mon;
 
-    let mon, name, monVal, year, startDay, monLength;
-    mon = monObj.month;
-    name = monObj.name;
-    monVal = monObj.value;
-    year = monObj.year;
-    startDay = monObj.startDay;
-    monLength = monObj.length;
+function displayMonth() {
 
-    print(
-        repString(" ", 6) + name + " " + year
-    );
+    mon = createMonth(currentMonth, currentYear);
+    document.getElementById("month_Year").textContent = mon.name + (" ") + mon.year;
+    if (currentMonthForStyle == mon.value) {
 
-    let wklist = "  ";
-    for (wkday in weekDays) {
-        wklist += weekDays[wkday] + "  ";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: #83aae6; border-radius: 30%;";
+    } else {
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
     }
-    print(wklist);
+    for (i = 0; i < 42; i++) {
+        document.getElementById("day" + i).textContent = mon.month[i];
 
-    for (y = 0; y < 6; y++) {
-        let row = "";
-        for (z = 0; z < 7; z++) {
-            space = "  ";
-            row += space + mon[y * 7 + z];
-            if (mon[y * 7 + z].toString().length == 1) {
-                row += " ";
-            }
-        }
-        print(row);
     }
+
+
+
+
+
+}
+
+function prevMonth() {
+    document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
+    if (currentMonth == 0) {
+        currentMonth = 11;
+        currentYear--;
+    } else {
+        currentMonth--;
+    }
+    displayMonth();
+}
+
+function nextMonth() {
+    document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
+    if (currentMonth == 11) {
+        currentMonth = 0;
+        currentYear++;
+    } else {
+        currentMonth++;
+    }
+
+    displayMonth();
 }
 
 function createMonth(monVal, year) {
@@ -120,12 +137,4 @@ function createMonth(monVal, year) {
         'length': monthLen
     }
 
-}
-
-let mon1 = createMonth(0, 2018);
-displayMonth(mon1);
-
-function createAndDisplayMonth(mon, year) {
-    let newMonth = createMonth(mon, year);
-    displayMonth(newMonth);
 }

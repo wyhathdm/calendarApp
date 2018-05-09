@@ -11,6 +11,7 @@
 
 body {
     background-color: #e6dc83;
+    transition: opacity 2s ease-in;
 }
 
 section.calendar {
@@ -51,6 +52,7 @@ section.calendar .btn:active {
 }
 
 section.calendar .btn:hover {
+    transition: .3s;
     color: #fcee6d;
 }
 
@@ -171,9 +173,7 @@ section.calendar form label.day.invalid {
 }
 
 section.calendar form label.day.invalid span,
-section.calendar form label.day.invalid input {
-    display: none;
-}
+section.calendar form label.day.invalid input {}
 
 section.calendar div.clearfix {
     clear: both;
