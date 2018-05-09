@@ -105,10 +105,10 @@ section.calendar form label.day em {
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    border-color: #29323f;
+    border-color: #ffffff;
     width: 3px;
     height: 3px;
-    background-color: #685e02;
+    background-color: white;
     margin-left: 11px;
     margin-top: 2px;
     opacity: 0;

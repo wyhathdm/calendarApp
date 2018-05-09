@@ -3,13 +3,21 @@ let calDaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
 let monthStarts = [4, 0, 0, 3, 5, 1, 3, 6, 2, 4, 0, 2];
+let hoverArray = [];
+let placeholderArray = [];
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
 let currentMonth = currentDate.getMonth();
 let currentDay = currentDate.getDate();
 let currentMonthForStyle = currentDate.getMonth();
+let currentYearForStyle = currentDate.getFullYear();
 //let events = []
+dataObject = {
+    month: [],
+    year: [],
+    day: [],
 
+}
 
 //console.table(month);
 
@@ -42,10 +50,9 @@ function getMonLength(monVal, year) {
 let mon;
 
 function displayMonth() {
-
     mon = createMonth(currentMonth, currentYear);
     document.getElementById("month_Year").textContent = mon.name + (" ") + mon.year;
-    if (currentMonthForStyle == mon.value) {
+    if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
         document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: #83aae6; border-radius: 30%;";
     } else {
@@ -53,14 +60,16 @@ function displayMonth() {
     }
     for (i = 0; i < 42; i++) {
         document.getElementById("day" + i).textContent = mon.month[i];
+        //     if (document.getElementsById('day' + i).value > 1 && event.keycode == 13) {
+        //         placeholderArray.push({ "month": currentMonth, "year": currentDate, "date": day });
+        //     }
+        // }
+        //LEFT OFF HERE makingg functionality for data storage of input
 
     }
 
-
-
-
-
 }
+
 
 function prevMonth() {
     document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
@@ -121,7 +130,12 @@ function createMonth(monVal, year) {
         x++;
     }
 
+    function storeAppointment() {
+        for (i = 0; i < 42; i++) {
+            document.getElementById("day" + i).placeholder;
 
+        }
+    }
     //console.table(month, 7);
     //displayMonth(month, monName, monVal, year, startDay, monthLen);
     /*for(i=0; i<42; i++){
@@ -136,5 +150,4 @@ function createMonth(monVal, year) {
         'startDay': startDay,
         'length': monthLen
     }
-
 }
