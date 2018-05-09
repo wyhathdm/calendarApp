@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../calendar.js"></script>
+    <script src="main.js"></script>
+</head>
+<body onload="loadMon()">
+    <h3 id="monthName"></h3>
+    <table>
+            <tr></tr>
+            <td>Su</td>
+            <td>M </td>
+            <td>Tu</td>
+            <td>W </td>
+            <td>Th </td>
+            <td>F </td>
+            <td>Sa</td>  
+        <tr></tr>
+        <td id="day0"></td>
+        <td id="day1"></td>
+        <td id="day2"></td>
+        <td id="day3"></td>
+        <td id="day4"></td>
+        <td id="day5"></td>
+        <td id="day6"></td>
+        
+        <tr></tr>
+        <td id="day7"></td>
+        <td id="day8"></td>
+        <td id="day9"></td>
+        <td id="day10"></td>
+        <td id="day11"></td>
+        <td id="day12"></td>
+        <td id="day13"></td>
+       
+        <tr></tr>
+        <td id="day14"></td>
+        <td id="day15"></td>
+        <td id="day16"></td>
+        <td id="day17"></td>
+        <td id="day18"></td>
+        <td id="day19"></td>
+        <td id="day20"></td>
+        <tr></tr>
+        <td id="day21"></td>
+        <td id="day22"></td>
+        <td id="day23"></td>
+        <td id="day24"></td>
+        <td id="day25"></td>
+        <td id="day26"></td>
+        <td id="day27"></td>
+        <tr></tr>
+        <td id="day28"></td>
+        <td id="day29"></td>
+        <td id="day30"></td>
+        <td id="day31"></td>
+        <td id="day32"></td>
+        <td id="day33"></td>
+        <td id="day34"></td>
+        <tr></tr>
+        <td id="day35"></td>
+        <td id="day36"></td>
+        <td id="day37"></td>
+        <td id="day38"></td>
+        <td id="day39"></td>
+        <td id="day40"></td>
+        <td id="day41"></td>
+    </table>
+    <button id="backBtn" onclick="backward()">back</button>
+    <button id="fwdBtn" onclick="forward()">forward</button>
+</body>
+</html>
