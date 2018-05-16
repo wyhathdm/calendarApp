@@ -95,8 +95,9 @@ function createMonth(monVal, year) {
 
     for (i = 0; i < 42; i++) {
         month.push(null);
+        console.log(i);
         document.getElementById("day" + i).classList.remove("nonMonth");
-
+        document.getElementById("input" + i).disabled = false;
     }
 
     let startDay = monthStarts[monVal];
@@ -121,13 +122,15 @@ function createMonth(monVal, year) {
     for (i = monthLen + startDay; i < 42; i++) {
         month[i] = (i - (monthLen + startDay)) + 1;
         document.getElementById("day" + i).classList.add("nonMonth");
-
+        document.getElementById("input" + i).disabled = true;
     }
-
+    //before
     let x = 0;
     while (month[x] == null) {
         month[x] = prevMonthLen - startDay + x + 1;
         document.getElementById("day" + x).classList.add("nonMonth");
+        console.log("day" + x);
+        document.getElementById("input" + x).disabled = true;
         x++;
     }
 
