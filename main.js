@@ -3,19 +3,19 @@ let calDaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
 let monthStarts = [4, 0, 0, 3, 5, 1, 3, 6, 2, 4, 0, 2];
-let hoverArray = [];
-let placeholderArray = [];
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
 let currentMonth = currentDate.getMonth();
 let currentDay = currentDate.getDate();
 let currentMonthForStyle = currentDate.getMonth();
 let currentYearForStyle = currentDate.getFullYear();
-//let events = []
-dataObject = {
+
+let dataObject = {
+
+    data: [],
     month: [],
     year: [],
-    day: [],
+    day: []
 
 }
 
@@ -60,15 +60,10 @@ function displayMonth() {
     }
     for (i = 0; i < 42; i++) {
         document.getElementById("day" + i).textContent = mon.month[i];
-        //     if (document.getElementsById('day' + i).value > 1 && event.keycode == 13) {
-        //         placeholderArray.push({ "month": currentMonth, "year": currentDate, "date": day });
-        //     }
-        // }
-        //LEFT OFF HERE makingg functionality for data storage of input
-
     }
-
 }
+
+
 
 
 function prevMonth() {
@@ -95,10 +90,13 @@ function nextMonth() {
 }
 
 function createMonth(monVal, year) {
+
     let month = [];
 
     for (i = 0; i < 42; i++) {
         month.push(null);
+        document.getElementById("day" + i).classList.remove("nonMonth");
+
     }
 
     let startDay = monthStarts[monVal];
@@ -122,20 +120,18 @@ function createMonth(monVal, year) {
 
     for (i = monthLen + startDay; i < 42; i++) {
         month[i] = (i - (monthLen + startDay)) + 1;
+        document.getElementById("day" + i).classList.add("nonMonth");
+
     }
 
     let x = 0;
     while (month[x] == null) {
         month[x] = prevMonthLen - startDay + x + 1;
+        document.getElementById("day" + x).classList.add("nonMonth");
         x++;
     }
 
-    function storeAppointment() {
-        for (i = 0; i < 42; i++) {
-            document.getElementById("day" + i).placeholder;
 
-        }
-    }
     //console.table(month, 7);
     //displayMonth(month, monName, monVal, year, startDay, monthLen);
     /*for(i=0; i<42; i++){
@@ -150,4 +146,30 @@ function createMonth(monVal, year) {
         'startDay': startDay,
         'length': monthLen
     }
+}
+
+function dataInput() {
+
+    for (i = 0; i < 42; i++) {
+        let inputData = document.getElementById("input" + i).value;
+        if (inputData.length < 1) { continue }
+        console.log(inputData);
+        dataObject.data.push(inputData);
+        dataObject.day.push(mon.startDay + i);
+        dataObject.month.push(mon.value);
+        dataObject.year.push(mon.year);
+    }
+
+}
+document.getElementById("input0").onblur = function() {
+    inputLeaveFocus()
+};
+
+function inputLeaveFocus() {
+
+    dataInput();
+    dataObject.data = dataObject.data.filter(function(dataLength) {
+        return dataObject.data[dataLength].length > 1;
+
+    });
 }

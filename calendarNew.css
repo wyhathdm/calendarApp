@@ -172,13 +172,16 @@ section.calendar form label.day.invalid {
     height: 25px;
 }
 
-section.calendar form label.day.invalid span,
-section.calendar form label.day.invalid input {}
-
 section.calendar div.clearfix {
     clear: both;
 }
 
 section.calendar div.hidden {
     display: none;
+}
+
+.nonMonth {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
 }
