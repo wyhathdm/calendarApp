@@ -92,12 +92,12 @@ function nextMonth() {
 function createMonth(monVal, year) {
 
     let month = [];
-
+    //reset disabled and classes
     for (i = 0; i < 42; i++) {
         month.push(null);
-        console.log(i);
-        document.getElementById("day" + i).classList.remove("nonMonth");
         document.getElementById("input" + i).disabled = false;
+        document.getElementById("day" + i).classList.remove("nonMonth");
+
     }
 
     let startDay = monthStarts[monVal];
@@ -118,18 +118,19 @@ function createMonth(monVal, year) {
     for (i = startDay; i < startDay + monthLen; i++) {
         month[i] = (i - startDay) + 1;
     }
-
+    //after numbers
     for (i = monthLen + startDay; i < 42; i++) {
         month[i] = (i - (monthLen + startDay)) + 1;
+
         document.getElementById("day" + i).classList.add("nonMonth");
         document.getElementById("input" + i).disabled = true;
     }
-    //before
+    //before numbers
     let x = 0;
     while (month[x] == null) {
         month[x] = prevMonthLen - startDay + x + 1;
+        console.log(x);
         document.getElementById("day" + x).classList.add("nonMonth");
-        console.log("day" + x);
         document.getElementById("input" + x).disabled = true;
         x++;
     }
