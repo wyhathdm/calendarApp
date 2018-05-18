@@ -176,3 +176,38 @@ function createMonth(monVal, year) {
 
 //     });
 // }
+
+// Open Modal
+let btn;
+let day;
+
+function onDayClick() {
+
+    for (i = 0; i < 42; i++) {
+        let day = document.getElementById("day" + i)
+        day.addEventListener("click", function(e) { tagClick.call(this.e) }, false);
+        let btn = day.id;
+        let modal = document.getElementsByClassName("modal-container")[0];
+        let closeModal = document.getElementById("close-modal");
+
+        function tagClick(e) {
+            //if element click display the box
+            modal.style.display = "grid";
+            console.log(modal.style.display);
+            //close if span is clicked
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+            }
+            console.log(day.textContent);
+            document.getElementById("modalDayText").textContent = "Set Event for" + " " + month_Year.textContent + " " + " the " + day.textContent;
+
+            //close the modal if clicked outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    }
+
+}
