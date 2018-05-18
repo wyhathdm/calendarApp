@@ -181,33 +181,46 @@ function createMonth(monVal, year) {
 let btn;
 let day;
 
+
 function onDayClick() {
 
     for (i = 0; i < 42; i++) {
         let day = document.getElementById("day" + i)
         day.addEventListener("click", function(e) { tagClick.call(this.e) }, false);
         let btn = day.id;
-        let modal = document.getElementsByClassName("modal-container")[0];
-        let closeModal = document.getElementById("close-modal");
+        let sideNav = document.getElementById("mySidenav");
+        let mainBody = document.getElementById("main");
+        let h1Contain = document.getElementsByClassName();
 
         function tagClick(e) {
-            //if element click display the box
-            modal.style.display = "grid";
-            console.log(modal.style.display);
-            //close if span is clicked
-            closeModal.onclick = function() {
-                modal.style.display = "none";
+
+            if ($(window).width() < 960) {
+                sideNav.style.width = "30vh";
+                main.style.marginLeft = "30vh";
+            } else {
+                sideNav.style.width = "75vh";
+                main.style.marginLeft = "75vh";
             }
+            //open sideNav
+
+            //set text
             console.log(day.textContent);
             document.getElementById("modalDayText").textContent = "Set Event for" + " " + month_Year.textContent + " " + " the " + day.textContent;
 
             //close the modal if clicked outside
             window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+                if (event.target == mainBody) {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
                 }
             }
         }
     }
 
+}
+
+//sidenav close
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }
