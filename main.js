@@ -54,7 +54,7 @@ function displayMonth() {
     document.getElementById("month_Year").textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: #83aae6; border-radius: 30%;";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "border: solid 1px #FBFEF9; border-radius: 30%;";
     } else {
         document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
     }
@@ -95,7 +95,7 @@ function createMonth(monVal, year) {
     //reset disabled and classes
     for (i = 0; i < 42; i++) {
         month.push(null);
-        document.getElementById("input" + i).disabled = false;
+        // document.getElementById("input" + i).disabled = false;
         document.getElementById("day" + i).classList.remove("nonMonth");
 
     }
@@ -123,7 +123,7 @@ function createMonth(monVal, year) {
         month[i] = (i - (monthLen + startDay)) + 1;
 
         document.getElementById("day" + i).classList.add("nonMonth");
-        document.getElementById("input" + i).disabled = true;
+        // document.getElementById("input" + i).disabled = true;
     }
     //before numbers
     let x = 0;
@@ -131,7 +131,7 @@ function createMonth(monVal, year) {
         month[x] = prevMonthLen - startDay + x + 1;
         console.log(x);
         document.getElementById("day" + x).classList.add("nonMonth");
-        document.getElementById("input" + x).disabled = true;
+        // document.getElementById("input" + x).disabled = true;
         x++;
     }
 
@@ -152,28 +152,28 @@ function createMonth(monVal, year) {
     }
 }
 
-function dataInput() {
+// function dataInput() {
 
-    for (i = 0; i < 42; i++) {
-        let inputData = document.getElementById("input" + i).value;
-        if (inputData.length < 1) { continue }
-        console.log(inputData);
-        dataObject.data.push(inputData);
-        dataObject.day.push(mon.startDay + i);
-        dataObject.month.push(mon.value);
-        dataObject.year.push(mon.year);
-    }
+//     for (i = 0; i < 42; i++) {
+//         // let inputData = document.getElementById("input" + i).value;
+//         if (inputData.length < 1) { continue }
+//         console.log(inputData);
+//         dataObject.data.push(inputData);
+//         dataObject.day.push(mon.startDay + i);
+//         dataObject.month.push(mon.value);
+//         dataObject.year.push(mon.year);
+//     }
 
-}
-document.getElementById("input0").onblur = function() {
-    inputLeaveFocus()
-};
+// }
+// document.getElementById("input0").onblur = function() {
+//     inputLeaveFocus()
+// };
 
-function inputLeaveFocus() {
+// function inputLeaveFocus() {
 
-    dataInput();
-    dataObject.data = dataObject.data.filter(function(dataLength) {
-        return dataObject.data[dataLength].length > 1;
+//     dataInput();
+//     dataObject.data = dataObject.data.filter(function(dataLength) {
+//         return dataObject.data[dataLength].length > 1;
 
-    });
-}
+//     });
+// }
