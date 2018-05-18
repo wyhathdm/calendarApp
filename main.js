@@ -54,10 +54,9 @@ function displayMonth() {
     document.getElementById("month_Year").textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "border: solid 1px #FBFEF9; border-radius: 30%;";
-    } else {
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(240,100,73,0.75);";
     }
+
     for (i = 0; i < 42; i++) {
         document.getElementById("day" + i).textContent = mon.month[i];
     }
