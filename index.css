@@ -114,7 +114,16 @@ a {
 @media only screen and (max-height:800px) {
     .container-wrap {
         zoom: 0;
-        overflow: hidden;
+    }
+}
+
+@media only screen and (orientation:landscape) and (min-height:1000px) {
+    .container-wrap {
+        height: 100%;
+        box-shadow: none;
+    }
+    body {
+        background: #5BC3EB;
     }
 }
 
