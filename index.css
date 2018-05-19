@@ -164,7 +164,7 @@ a {
     }
 }
 
-@media only screen and (max-height:750px) and (max-height:500px) {
+@media only screen and (max-height:749px) and (max-width:640px) {
     body {
         background: #5BC3EB;
     }
@@ -195,6 +195,29 @@ a {
         border: gray;
         padding-right: .65rem;
         padding-left: .65rem;
+        width: 50%;
+        height: 10%;
+        margin: .10rem;
+    }
+}
+
+@media only screen and (max-width:1199px) and (max-height:600px) and (orientation:landscape) {
+    body {
+        background: #5BC3EB;
+    }
+    .container-wrap {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        height: 75vh;
+        width: 200vh;
+    }
+    .day {
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background: white;
+        color: black;
+        border: gray;
         width: 50%;
         height: 10%;
         margin: .10rem;
