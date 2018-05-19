@@ -16,6 +16,8 @@ let navOpen = false;
 
 let pinNav = false;
 
+let events = [];
+
 // let dataObject = {
 
 /*
@@ -245,4 +247,47 @@ $(".closebtn").click(function() {
 
 $("body").ready(function() {
     displayMonth();
+});
+
+
+function submitEvent() {
+    let eventData = {
+        'name': $(".eventName").val(),
+        'location': $(".locVal").val(),
+        'colour': $(".color-select").val(),
+        'day': day.textContent,
+        'monthYear': month_Year.textContent,
+        'time': {
+            'start': {
+                'num': $(".startTime").val(),
+                'AMPM': function() {
+                    if ($(".AM1 input[type='radio']:checked").val()) {
+                        return 'AM';
+                    } else if ($(".PM1 input[type='radio']:checked").val()) {
+                        return 'PM';
+                    } else {
+                        return null;
+                    }
+                }
+            },
+            'end': {
+                'num': $(".endTime").val(),
+                'AMPM': function() {
+                    if ($(".AM2 input[type='radio']:checked").val()) {
+                        return 'AM';
+                    } else if ($(".PM2 input[type='radio']:checked").val()) {
+                        return 'PM';
+                    } else {
+                        return null;
+                    }
+                }
+            }
+        }
+    };
+    return eventData;
+}
+
+$(".submit").click(function() {
+    events.push(submitEvent());
+    console.log(events);
 });
