@@ -189,7 +189,7 @@ function tagClick(e) {
     }
 
     //open sideNav
-    document.getElementById("modalDayText").textContent = "Set Event for" + " " + monthyear.textContent + " " + " the " + day.textContent;
+    document.getElementById("modalDayText").textContent = "Set Event for" + " " + monthyear.textContent + " " + " the " + day.textContent + numEnd(day.textContent);
 
     //close the modal if clicked outside
     $("window").click(function(event) {
@@ -208,6 +208,18 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
 }
 
+function numEnd(num) {
+    if (num == 1) {
+        return "st";
+    } else if (num == 2) {
+        return "nd";
+    } else if (num == 3) {
+        return "rd"
+    } else {
+        return "th";
+    }
+}
+
 
 $(document).keydown(function(event) {
     if (!$("input").is(':focus')) {
@@ -218,3 +230,4 @@ $(document).keydown(function(event) {
         }
     }
 });
+m
