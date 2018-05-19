@@ -1,7 +1,7 @@
-let running = true;
+// let running = true;
 let calDaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
+// let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
 let monthStarts = [4, 0, 0, 3, 5, 1, 3, 6, 2, 4, 0, 2];
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
@@ -16,27 +16,17 @@ let navOpen = false;
 
 let pinNav = false;
 
-let dataObject = {
+// let dataObject = {
 
-    data: [],
-    month: [],
-    year: [],
-    day: []
+/*
+ *     data: [],
+ *     month: [],
+ *     year: [],
+ *     day: []
+ */
 
-}
+// }
 
-
-function repString(string, amnt) {
-    let output = "";
-    for (i = 0; i < amnt; i++) {
-        output += string;
-    }
-    return output;
-}
-
-function print(text) {
-    console.log(text);
-}
 
 function countLeapYears(year) {
     return Math.round(
@@ -63,7 +53,7 @@ function displayMonth() {
         document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(240,100,73,0.75);";
     }
 
-    for (i = 0; i < 42; i++) {
+    for (let i = 0; i < 42; i++) {
         document.getElementById("day" + i).textContent = mon.month[i];
     }
 }
@@ -101,7 +91,7 @@ function createMonth(monVal, year) {
     }
     let month = [];
     //reset disabled and classes
-    for (i = 0; i < 42; i++) {
+    for (let i = 0; i < 42; i++) {
         month.push(null);
         document.getElementById("day" + i).classList.remove("nonMonth");
 
@@ -122,11 +112,11 @@ function createMonth(monVal, year) {
         prevMonthLen = getMonLength((monVal - 1) % 12, year);
     }
 
-    for (i = startDay; i < startDay + monthLen; i++) {
+    for (let i = startDay; i < startDay + monthLen; i++) {
         month[i] = (i - startDay) + 1;
     }
     //after numbers
-    for (i = monthLen + startDay; i < 42; i++) {
+    for (let i = monthLen + startDay; i < 42; i++) {
         month[i] = (i - (monthLen + startDay)) + 1;
 
         document.getElementById("day" + i).classList.add("nonMonth");
@@ -135,7 +125,7 @@ function createMonth(monVal, year) {
     let x = 0;
     while (month[x] == null) {
         month[x] = prevMonthLen - startDay + x + 1;
-        console.log(x);
+        // console.log(x);
         document.getElementById("day" + x).classList.add("nonMonth");
         x++;
     }
@@ -164,12 +154,12 @@ $(".day").on('click', function(ev) {
     //alert(navOpen);
 });
 
-function tagClick(e) {
+function tagClick() {
 
 
     let sideNav = document.getElementById("mySidenav");
     let mainBody = document.getElementById("main");
-    let h1Contain = document.getElementsByClassName("h1-container");
+    //let h1Contain = document.getElementsByClassName("h1-container");
     let monthyear = document.getElementById("month_Year");
 
 
@@ -180,12 +170,12 @@ function tagClick(e) {
     } else if (!navOpen) {
         if ($(window).width() < 960) {
             sideNav.style.width = "100%";
-            main.style.marginLeft = "100%";
-            console.log("Hello");
+            mainBody.style.marginLeft = "100%";
+            // console.log("Hello");
             navOpen = true;
         } else {
             sideNav.style.width = "50%";
-            main.style.marginLeft = "50%";
+            mainBody.style.marginLeft = "50%";
             navOpen = true;
         }
     }
@@ -194,13 +184,6 @@ function tagClick(e) {
     document.getElementById("modalDayText").textContent = "Set Event for the " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
 
     //close the modal if clicked outside
-    $("window").click(function(event) {
-        if (!pinNav && event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            navOpen = false;
-        }
-    });
 }
 
 //sidenav close
@@ -254,4 +237,12 @@ $(".thumbbtn").click(function() {
     } else {
         $(".thumbbtn").css("color", "white");
     }
+});
+
+$(".closebtn").click(function() {
+    closeNav();
+});
+
+$("body").ready(function() {
+    displayMonth();
 });
