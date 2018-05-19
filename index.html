@@ -17,50 +17,50 @@
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <a href="javascript:void(0)" class="thumbbtn" onclick=""><i class="fas fa-thumbtack"></i></a>
         <h3 id="modalDayText"></h3>
-        <form id="allData" action="#">
+        <form id="allData" action="">
             <div class="form-grid">
                 <h3 class="add-event-h3">Event:</h3>
-                <form class="form-1" action="#">
+                <form class="form-1" action="">
                     <label for="add-event">
                 <input placeholder="Add Event:"id="sideInput" class='eventName' type="text">
                 </label>
                 </form>
                 <h3 class="time-h3">Time:</h3>
-                <form class="form-2" action="#">
+                <form class="form-2" action="">
                     <label for="add-time">
                 <input class='timeVal' placeholder="Time:"id="sideInput"type="text">
                 </label>
                 </form>
                 <h3 class="location-h3">Location:</h3>
-                <form class="form-3" action="#">
+                <form class="form-3" action="">
                     <label for="add-location">
                 <input class='locVal' placeholder="Location:"id="sideInput"type="text">
                 </label>
                 </form>
 
                 <!-- start end -->
-                <form class="form-4" action="#">
+                <form class="form-4" action="">
                     <label for="add-start">
                 <input class='startVal' placeholder="Start:"id="sideInput"type="text">
                 </label>
                 </form>
 
 
-                <form class="form-5" action="#">
+                <form class="form-5" action="">
                     <label for="add-end">
                 <input class='endVal' placeholder="End:"id="sideInput"type="text">
                 </label>
                 </form>
                 <!-- time -->
-                <form class="form-6" action="#">
+                <form class="form-6" action="">
                     <label for="add-time-start">
-                    <input class='startTime' placeholder="Time Start:"id="sideInput"type="text">
+                    <input class='startTime' placeholder="Time Start:" id="sideInput" type="text">
                 </label>
                     <input class='AM1' value="AM" type="radio" name="time-of-day"><label for="am">AM</label>
                     <input class='PM1' value="PM" type="radio" name="time-of-day"><label for="pm">PM</label>
                 </form>
 
-                <form class="form-7" action="#">
+                <form class="form-7" action="">
                     <label for="add-time-end">
                         <input class='endTime' placeholder="Time End:"id="sideInput"type="text">
                         </label>
@@ -70,21 +70,16 @@
                 <!-- end time and start end -->
 
                 <h3 class="color-h3">Color: </h3>
-                <form class="color-dropdown" action="#">
+                <form class="color-dropdown" action="">
 
-                    <select class="color-select" name="event type" id="selectEvent">
-                    <option value="placeholder">Select Color:</option>
-                    <option value="Red">Red</option>
-                    <option value="Green">Green</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Orange">Orange</option>
+                    <input type="color" name="color-select" class="color-select" id="colorSelect">
 
-                </select>
+                    </select>
 
                 </form>
 
                 <form class="form-8" action="">
-                    <input class="submit" type="submit" value="Submit">
+                    <input class="submit" type="button" value="Submit">
                 </form>
         </form>
         </div>

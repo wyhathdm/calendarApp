@@ -181,11 +181,11 @@ function tagClick() {
             navOpen = true;
         }
     }
-
-    //open sideNav
-    document.getElementById("modalDayText").textContent = "Set Event for the " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
-
-    //close the modal if clicked outside
+    if (day.textContent == currentDay && monthyear.textContent == monthNames[currentMonthForStyle] + " " + currentYear) {
+        document.getElementById("modalDayText").textContent = "Set Event for " + "Today";
+    } else {
+        document.getElementById("modalDayText").textContent = "Set Event for the " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
+    }
 }
 
 //sidenav close
@@ -250,44 +250,42 @@ $("body").ready(function() {
 });
 
 
-function submitEvent() {
+function submitEvent(radioCheck, radioCheckEnd) {
     let eventData = {
         'name': $(".eventName").val(),
         'location': $(".locVal").val(),
-        'colour': $(".color-select").val(),
+        'colour': $("colorSelect").val(),
         'day': day.textContent,
         'monthYear': month_Year.textContent,
         'time': {
             'start': {
                 'num': $(".startTime").val(),
-                'AMPM': function() {
-                    if ($(".AM1 input[type='radio']:checked").val()) {
-                        return 'AM';
-                    } else if ($(".PM1 input[type='radio']:checked").val()) {
-                        return 'PM';
-                    } else {
-                        return null;
-                    }
-                }
-            },
-            'end': {
-                'num': $(".endTime").val(),
-                'AMPM': function() {
-                    if ($(".AM2 input[type='radio']:checked").val()) {
-                        return 'AM';
-                    } else if ($(".PM2 input[type='radio']:checked").val()) {
-                        return 'PM';
-                    } else {
-                        return null;
-                    }
-                }
+                'AMPM': radioCheck
             }
+        },
+        'end': {
+            'num': $(".endTime").val(),
+            'AMPM': radioCheckEnd
         }
-    };
+    }
     return eventData;
 }
 
-$(".submit").click(function() {
+
+colorPicker = document.getElementById("colorSelect");
+//colorPicker.addEventListener("input", updateFirst, false);
+colorPicker.addEventListener("change", watchColorPicker, false);
+
+function watchColorPicker(event) {
+    document.querySelectorAll("p").forEach(function(p) {
+        p.style.color = event.target.value;
+    });
+}
+
+
+
+$(".submit").click(function(event) {
+    event.preventDefault();
     let radioCheck = document.querySelector('[name="time-of-day"]:checked');
     let radioCheckEnd = document.querySelector('[name="time-of-day-end"]:checked');
     if (radioCheck != null) {
@@ -298,6 +296,11 @@ $(".submit").click(function() {
         console.log(radioCheckEnd.value);
     }
 
-    events.push(submitEvent());
+    events.push(submitEvent(radioCheck, radioCheckEnd));
     console.log(events);
 });
+
+// $(".submit").submit(function(event) {
+//     alert("Handler for .submit() called.");
+//     event.preventDefault();
+// });

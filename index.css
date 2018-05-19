@@ -435,6 +435,14 @@ select {
     box-sizing: border-box;
 }
 
+input[type="color"] {
+    width: 90%;
+    padding: .25rem;
+    display: inline-block;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 
 /* end side input */
 
