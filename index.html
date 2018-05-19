@@ -16,6 +16,68 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h3 id="modalDayText"></h3>
+
+        <div class="form-grid">
+            <h3 class="add-event-h3">Event:</h3>
+            <form class="form-1" action="#">
+                <label for="add-event">
+                <input placeholder="Add Event:"id="sideInput"type="text">
+                </label>
+            </form>
+            <h3 class="time-h3">Time:</h3>
+            <form class="form-2" action="#">
+                <label for="add-time">
+                <input placeholder="Time:"id="sideInput"type="text">
+                </label>
+            </form>
+            <h3 class="location-h3">Location:</h3>
+            <form class="form-3" action="#">
+                <label for="add-location">
+                <input placeholder="Location:"id="sideInput"type="text">
+                </label>
+            </form>
+
+            <!-- start end -->
+            <form class="form-4" action="#">
+                <label for="add-start">
+                <input placeholder="Start:"id="sideInput"type="text">
+                </label>
+            </form>
+
+
+            <form class="form-5" action="#">
+                <label for="add-end">
+                <input placeholder="End:"id="sideInput"type="text">
+                </label>
+            </form>
+            <!-- time -->
+            <form class="form-6" action="#">
+                <label for="add-time-start">
+                    <input placeholder="Time Start:"id="sideInput"type="text">
+                    </label>
+            </form>
+
+            <form class="form-7" action="#">
+                <label for="add-time-end">
+                        <input placeholder="Time End:"id="sideInput"type="text">
+                        </label>
+            </form>
+            <!-- end time and start end -->
+
+            <h3 class="color-h3">Color: </h3>
+            <form class="color-dropdown" action="#">
+
+                <select class="color-select" name="event type" id="selectEvent">
+                    <option value="placeholder">Select Color:</option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Orange">Orange</option>
+
+                </select>
+
+            </form>
+        </div>
     </div>
 
     <!-- Use any element to open the sidenav -->
@@ -40,79 +102,60 @@
                 <div class="weekday">Sat</div>
             </div>
 
-            <div class="modal-container">
-                <div id="modal-content">
 
-                    <form action="#">
-                        <label for="">
-                        <input placeholder="Add Event:"id="modalInput"type="text">
-                        </label>
-                    </form>
-                    <h3 id="floatH3">Color: </h3>
-                    <form action="#">
 
-                        <select name="event type" id="selectEvent">
-                            <option value="placeholder">Select Color:</option>
-                            <option value="Red">Red</option>
-                            <option value="Green">Green</option>
-                            <option value="Blue">Blue</option>
-                            <option value="Orange">Orange</option>
 
-                        </select>
 
-                    </form>
-                    <span id="close-modal">Close</span>
+
+            <div class="container-wrap">
+                <div class="calendar-container">
+
+                    <div class="day" onclick="onDayClick()" id="day0"></div>
+                    <div class="day" onclick="onDayClick()" id="day1"></div>
+                    <div class="day" onclick="onDayClick()" id="day2"></div>
+                    <div class="day" onclick="onDayClick()" id="day3"></div>
+                    <div class="day" onclick="onDayClick()" id="day4"></div>
+                    <div class="day" onclick="onDayClick()" id="day5"></div>
+                    <div class="day" onclick="onDayClick()" id="day6"></div>
+                    <div class="day" onclick="onDayClick()" id="day7"></div>
+                    <div class="day" onclick="onDayClick()" id="day8"></div>
+                    <div class="day" onclick="onDayClick()" id="day9"></div>
+                    <div class="day" onclick="onDayClick()" id="day10"></div>
+                    <div class="day" onclick="onDayClick()" id="day11"></div>
+                    <div class="day" onclick="onDayClick()" id="day12"></div>
+                    <div class="day" onclick="onDayClick()" id="day13"></div>
+                    <div class="day" onclick="onDayClick()" id="day14"></div>
+                    <div class="day" onclick="onDayClick()" id="day15"></div>
+                    <div class="day" onclick="onDayClick()" id="day16"></div>
+                    <div class="day" onclick="onDayClick()" id="day17"></div>
+                    <div class="day" onclick="onDayClick()" id="day18"></div>
+                    <div class="day" onclick="onDayClick()" id="day19"></div>
+                    <div class="day" onclick="onDayClick()" id="day20"></div>
+                    <div class="day" onclick="onDayClick()" id="day21"></div>
+                    <div class="day" onclick="onDayClick()" id="day22"></div>
+                    <div class="day" onclick="onDayClick()" id="day23"></div>
+                    <div class="day" onclick="onDayClick()" id="day24"></div>
+                    <div class="day" onclick="onDayClick()" id="day25"></div>
+                    <div class="day" onclick="onDayClick()" id="day26"></div>
+                    <div class="day" onclick="onDayClick()" id="day27"></div>
+                    <div class="day" onclick="onDayClick()" id="day28"></div>
+                    <div class="day" onclick="onDayClick()" id="day29"></div>
+                    <div class="day" onclick="onDayClick()" id="day30"></div>
+                    <div class="day" onclick="onDayClick()" id="day31"></div>
+                    <div class="day" onclick="onDayClick()" id="day32"></div>
+                    <div class="day" onclick="onDayClick()" id="day33"></div>
+                    <div class="day" onclick="onDayClick()" id="day34"></div>
+                    <div class="day" onclick="onDayClick()" id="day35"></div>
+                    <div class="day" onclick="onDayClick()" id="day36"></div>
+                    <div class="day" onclick="onDayClick()" id="day37"></div>
+                    <div class="day" onclick="onDayClick()" id="day38"></div>
+                    <div class="day" onclick="onDayClick()" id="day39"></div>
+                    <div class="day" onclick="onDayClick()" id="day40"></div>
+                    <div class="day" onclick="onDayClick()" id="day41"></div>
+
                 </div>
-            </div>
-
-
-            <div class="calendar-container">
-
-                <div class="day" onclick="onDayClick()" id="day0"></div>
-                <div class="day" onclick="onDayClick()" id="day1"></div>
-                <div class="day" onclick="onDayClick()" id="day2"></div>
-                <div class="day" onclick="onDayClick()" id="day3"></div>
-                <div class="day" onclick="onDayClick()" id="day4"></div>
-                <div class="day" onclick="onDayClick()" id="day5"></div>
-                <div class="day" onclick="onDayClick()" id="day6"></div>
-                <div class="day" onclick="onDayClick()" id="day7"></div>
-                <div class="day" onclick="onDayClick()" id="day8"></div>
-                <div class="day" onclick="onDayClick()" id="day9"></div>
-                <div class="day" onclick="onDayClick()" id="day10"></div>
-                <div class="day" onclick="onDayClick()" id="day11"></div>
-                <div class="day" onclick="onDayClick()" id="day12"></div>
-                <div class="day" onclick="onDayClick()" id="day13"></div>
-                <div class="day" onclick="onDayClick()" id="day14"></div>
-                <div class="day" onclick="onDayClick()" id="day15"></div>
-                <div class="day" onclick="onDayClick()" id="day16"></div>
-                <div class="day" onclick="onDayClick()" id="day17"></div>
-                <div class="day" onclick="onDayClick()" id="day18"></div>
-                <div class="day" onclick="onDayClick()" id="day19"></div>
-                <div class="day" onclick="onDayClick()" id="day20"></div>
-                <div class="day" onclick="onDayClick()" id="day21"></div>
-                <div class="day" onclick="onDayClick()" id="day22"></div>
-                <div class="day" onclick="onDayClick()" id="day23"></div>
-                <div class="day" onclick="onDayClick()" id="day24"></div>
-                <div class="day" onclick="onDayClick()" id="day25"></div>
-                <div class="day" onclick="onDayClick()" id="day26"></div>
-                <div class="day" onclick="onDayClick()" id="day27"></div>
-                <div class="day" onclick="onDayClick()" id="day28"></div>
-                <div class="day" onclick="onDayClick()" id="day29"></div>
-                <div class="day" onclick="onDayClick()" id="day30"></div>
-                <div class="day" onclick="onDayClick()" id="day31"></div>
-                <div class="day" onclick="onDayClick()" id="day32"></div>
-                <div class="day" onclick="onDayClick()" id="day33"></div>
-                <div class="day" onclick="onDayClick()" id="day34"></div>
-                <div class="day" onclick="onDayClick()" id="day35"></div>
-                <div class="day" onclick="onDayClick()" id="day36"></div>
-                <div class="day" onclick="onDayClick()" id="day37"></div>
-                <div class="day" onclick="onDayClick()" id="day38"></div>
-                <div class="day" onclick="onDayClick()" id="day39"></div>
-                <div class="day" onclick="onDayClick()" id="day40"></div>
-                <div class="day" onclick="onDayClick()" id="day41"></div>
 
             </div>
-
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
