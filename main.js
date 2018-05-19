@@ -182,8 +182,8 @@ function tagClick(e) {
             console.log("Hello");
             navOpen = true;
         } else {
-            sideNav.style.width = "60vh";
-            main.style.marginLeft = "60vh";
+            sideNav.style.width = "50vh";
+            main.style.marginLeft = "50vh";
             navOpen = true;
         }
     }
