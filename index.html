@@ -8,13 +8,14 @@
     <title>Calendar app</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body onload="displayMonth()" id="transition">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="thumbbtn" onclick=""><i class="fas fa-thumbtack"></i></a>
         <h3 id="modalDayText"></h3>
 
         <div class="form-grid">
@@ -54,13 +55,17 @@
             <form class="form-6" action="#">
                 <label for="add-time-start">
                     <input placeholder="Time Start:"id="sideInput"type="text">
-                    </label>
+                </label>
+                <input type="radio" name="time-of-day"><label for="am">AM</label>
+                <input type="radio" name="time-of-day"><label for="pm">PM</label>
             </form>
 
             <form class="form-7" action="#">
                 <label for="add-time-end">
                         <input placeholder="Time End:"id="sideInput"type="text">
                         </label>
+                <input type="radio" name="time-of-day-end"><label for="am">AM</label>
+                <input type="radio" name="time-of-day-end"><label for="pm">PM</label>
             </form>
             <!-- end time and start end -->
 
