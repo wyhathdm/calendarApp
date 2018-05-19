@@ -224,6 +224,20 @@ a {
     }
 }
 
+@media only screen and (max-width:980px) and (max-height:1450px) and (orientation:portrait) {
+    body {
+        background: #5BC3EB;
+        overflow: hidden;
+    }
+    .container-wrap {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100%;
+    }
+}
+
 
 /* Modal */
 
