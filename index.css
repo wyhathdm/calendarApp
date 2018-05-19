@@ -509,3 +509,18 @@ select {
 
 
 /* DROPDOWN  HEYY THATS PRETTY GOOD*/
+
+a.thumbbtn.fas.fa-thumbtack {
+    color: white;
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+}
+
+.thumbbtn {
+    position: absolute;
+    top: .5rem;
+    right: 60px;
+    font-size: 36px;
+    margin-left: 50px;
+}

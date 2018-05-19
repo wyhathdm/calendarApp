@@ -14,6 +14,8 @@ let day;
 
 let navOpen = false;
 
+let pinNav = false;
+
 let dataObject = {
 
     data: [],
@@ -171,7 +173,7 @@ function tagClick(e) {
     let monthyear = document.getElementById("month_Year");
 
 
-    if (navOpen) {
+    if (navOpen && !pinNav) {
         navOpen = false;
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
@@ -189,11 +191,11 @@ function tagClick(e) {
     }
 
     //open sideNav
-    document.getElementById("modalDayText").textContent = "Set Event for" + " " + monthyear.textContent + " " + " the " + day.textContent + numEnd(day.textContent);
+    document.getElementById("modalDayText").textContent = "Set Event for the " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
 
     //close the modal if clicked outside
     $("window").click(function(event) {
-        if (event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
+        if (!pinNav && event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
             navOpen = false;
@@ -203,17 +205,30 @@ function tagClick(e) {
 
 //sidenav close
 function closeNav() {
-    navOpen = false;
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    if (!pinNav) {
+        navOpen = false;
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
 }
 
 function numEnd(num) {
-    if (num == 1) {
+    let digit = num.substr(num.length - 1);
+    if (digit == 1) {
+        if (num.substr(num.length - 2) == 11) {
+            return "th";
+        }
+
         return "st";
-    } else if (num == 2) {
+    } else if (digit == 2) {
+        if (num.substr(num.length - 2) == 12) {
+            return "th";
+        }
         return "nd";
-    } else if (num == 3) {
+    } else if (digit == 3) {
+        if (num.substr(num.length - 2) == 13) {
+            return "th";
+        }
         return "rd"
     } else {
         return "th";
@@ -230,4 +245,13 @@ $(document).keydown(function(event) {
         }
     }
 });
-m
+
+
+$(".thumbbtn").click(function() {
+    pinNav = !pinNav;
+    if (pinNav) {
+        $(".thumbbtn").css("color", "yellow");
+    } else {
+        $(".thumbbtn").css("color", "white");
+    }
+});
