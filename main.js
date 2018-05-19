@@ -188,36 +188,34 @@ function onDayClick() {
         let day = document.getElementById("day" + i)
         day.addEventListener("click", function(e) { tagClick.call(this.e) }, false);
         let btn = day.id;
-    }
+        let sideNav = document.getElementById("mySidenav");
+        let mainBody = document.getElementById("main");
+        let h1Contain = document.getElementsByClassName("h1-container");
 
-    let sideNav = document.getElementById("mySidenav");
-    let mainBody = document.getElementById("main");
-    let h1Contain = document.getElementsByClassName("h1-container");
+        function tagClick(e) {
 
-    function tagClick(e) {
+            if ($(window).width() < 960) {
+                sideNav.style.width = "50vh";
+                main.style.marginLeft = "50vh";
+            } else {
+                sideNav.style.width = "75vh";
+                main.style.marginLeft = "75vh";
+            }
+            //open sideNav
+            //set text
+            console.log(btn);
+            console.log(day.textContent);
+            document.getElementById("modalDayText").textContent = "Set Event for" + " " + month_Year.textContent + " " + " the " + day.textContent;
 
-        if ($(window).width() < 960) {
-            sideNav.style.width = "50vh";
-            main.style.marginLeft = "50vh";
-        } else {
-            sideNav.style.width = "75vh";
-            main.style.marginLeft = "75vh";
-        }
-        //open sideNav
-        //set text
-        console.log(btn);
-        console.log(day.textContent);
-        document.getElementById("modalDayText").textContent = "Set Event for" + " " + month_Year.textContent + " " + " the " + day.textContent;
-
-        //close the modal if clicked outside
-        window.onclick = function(event) {
-            if (event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
+            //close the modal if clicked outside
+            window.onclick = function(event) {
+                if (event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
             }
         }
     }
-
 
 }
 
