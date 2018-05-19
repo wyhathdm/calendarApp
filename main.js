@@ -288,6 +288,16 @@ function submitEvent() {
 }
 
 $(".submit").click(function() {
+    let radioCheck = document.querySelector('[name="time-of-day"]:checked');
+    let radioCheckEnd = document.querySelector('[name="time-of-day-end"]:checked');
+    if (radioCheck != null) {
+        console.log(radioCheck.value);
+    }
+
+    if (radioCheckEnd != null) {
+        console.log(radioCheckEnd.value);
+    }
+
     events.push(submitEvent());
     console.log(events);
 });
