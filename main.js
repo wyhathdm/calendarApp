@@ -9,6 +9,10 @@ let currentMonth = currentDate.getMonth();
 let currentDay = currentDate.getDate();
 let currentMonthForStyle = currentDate.getMonth();
 let currentYearForStyle = currentDate.getFullYear();
+let month_Year;
+let day;
+
+let navOpen = false;
 
 let dataObject = {
 
@@ -19,7 +23,6 @@ let dataObject = {
 
 }
 
-//console.table(month);
 
 function repString(string, amnt) {
     let output = "";
@@ -51,13 +54,13 @@ let mon;
 
 function displayMonth() {
     mon = createMonth(currentMonth, currentYear);
-    document.getElementById("month_Year").textContent = mon.name + (" ") + mon.year;
+    month_Year = document.getElementById("month_Year");
+    month_Year.textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: #83aae6; border-radius: 30%;";
-    } else {
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = "background-color: none; border-color:none;";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(240,100,73,0.75);";
     }
+
     for (i = 0; i < 42; i++) {
         document.getElementById("day" + i).textContent = mon.month[i];
     }
@@ -90,12 +93,14 @@ function nextMonth() {
 }
 
 function createMonth(monVal, year) {
-
+    if (year < 1970) {
+        currentYear = 1970;
+        currentMonth = 0;
+    }
     let month = [];
     //reset disabled and classes
     for (i = 0; i < 42; i++) {
         month.push(null);
-        document.getElementById("input" + i).disabled = false;
         document.getElementById("day" + i).classList.remove("nonMonth");
 
     }
@@ -123,7 +128,6 @@ function createMonth(monVal, year) {
         month[i] = (i - (monthLen + startDay)) + 1;
 
         document.getElementById("day" + i).classList.add("nonMonth");
-        document.getElementById("input" + i).disabled = true;
     }
     //before numbers
     let x = 0;
@@ -131,16 +135,9 @@ function createMonth(monVal, year) {
         month[x] = prevMonthLen - startDay + x + 1;
         console.log(x);
         document.getElementById("day" + x).classList.add("nonMonth");
-        document.getElementById("input" + x).disabled = true;
         x++;
     }
 
-
-    //console.table(month, 7);
-    //displayMonth(month, monName, monVal, year, startDay, monthLen);
-    /*for(i=0; i<42; i++){
-        month[i] = null;
-    }*/
 
     return {
         'month': month,
@@ -152,28 +149,72 @@ function createMonth(monVal, year) {
     }
 }
 
-function dataInput() {
 
-    for (i = 0; i < 42; i++) {
-        let inputData = document.getElementById("input" + i).value;
-        if (inputData.length < 1) { continue }
-        console.log(inputData);
-        dataObject.data.push(inputData);
-        dataObject.day.push(mon.startDay + i);
-        dataObject.month.push(mon.value);
-        dataObject.year.push(mon.year);
+// Open Modal
+
+$(".day").on('click', function(ev) {
+    if (!$(this).hasClass("nonMonth")) {
+        day = this;
+        tagClick(ev);
+    }
+    // $(this).off('click');
+
+    //alert(navOpen);
+});
+
+function tagClick(e) {
+
+
+    let sideNav = document.getElementById("mySidenav");
+    let mainBody = document.getElementById("main");
+    let h1Contain = document.getElementsByClassName("h1-container");
+    let monthyear = document.getElementById("month_Year");
+
+
+    if (navOpen) {
+        navOpen = false;
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    } else if (!navOpen) {
+        if ($(window).width() < 960) {
+            sideNav.style.width = "100%";
+            main.style.marginLeft = "100%";
+            console.log("Hello");
+            navOpen = true;
+        } else {
+            sideNav.style.width = "50vh";
+            main.style.marginLeft = "50vh";
+            navOpen = true;
+        }
     }
 
-}
-document.getElementById("input0").onblur = function() {
-    inputLeaveFocus()
-};
+    //open sideNav
+    document.getElementById("modalDayText").textContent = "Set Event for" + " " + monthyear.textContent + " " + " the " + day.textContent;
 
-function inputLeaveFocus() {
-
-    dataInput();
-    dataObject.data = dataObject.data.filter(function(dataLength) {
-        return dataObject.data[dataLength].length > 1;
-
+    //close the modal if clicked outside
+    $("window").click(function(event) {
+        if (event.target == btn && sideNav.style.width == "50vh" || sideNav.style.width == "75vh") {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            navOpen = false;
+        }
     });
 }
+
+//sidenav close
+function closeNav() {
+    navOpen = false;
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+
+$(document).keydown(function(event) {
+    if (!$("input").is(':focus')) {
+        if (event.which == 39) {
+            nextMonth();
+        } else if (event.which == 37) {
+            prevMonth();
+        }
+    }
+});
