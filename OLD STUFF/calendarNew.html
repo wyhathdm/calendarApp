@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendarapp</title>
+    <link rel="stylesheet" type="text/css" href="calendarNew.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="displayMonth()" id="transition">
+
+    <section class='calendar'>
+
+        <h1 id="month_Year"></h1>
+
+
+        <form action='#'>
+            <label class='weekday'>Sun</label>
+            <label class='weekday'>Mon</label>
+            <label class='weekday'>Tue</label>
+            <label class='weekday'>Wed</label>
+            <label class='weekday'>Thu</label>
+            <label class='weekday'>Fri</label>
+            <label class='weekday'>Sat</label>
+            <label class='day' data-day='0'>
+      <input id="input0" class='appointment' date-day='-4' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day0"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='1'>
+      <input id="input1"  class='appointment' date-day='-3' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day1"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='2'>
+      <input id="input2"  class='appointment' date-day='-2' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day2"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='3'>
+      <input id="input3"  class='appointment' date-day='-1' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day3"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='4'>
+      <input id="input4"  class='appointment' date-day='0' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day4"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='5'>
+      <input id="input5"  class='appointment' date-day='1' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day5"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='6'>
+      <input id="input6"  class='appointment' date-day='2' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day6"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='7'>
+        <input id="input7"  class='appointment' date-day='2' placeholder='What would you like to do?' required='true' type='text'>
+        <span id="day7"></span>
+        <em></em>
+      </label>
+            <label class='day' data-day='8'>
+      <input id="input8"  class='appointment' date-day='4' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day8"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='9'>
+      <input id="input9"  class='appointment' date-day='5' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day9"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='10'>
+      <input id="input10"  class='appointment' date-day='6' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day10"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='11'>
+      <input id="input11"  class='appointment' date-day='7' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day11"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='12'>
+      <input id="input12"  class='appointment' date-day='8' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day12"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='13'>
+      <input id="input13"  class='appointment' date-day='9' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day13"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='14'>
+      <input id="input14"  class='appointment' date-day='10' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day14"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='15'>
+      <input id="input15"  class='appointment' date-day='11' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day15"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='16'>
+      <input id="input16"  class='appointment' date-day='12' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day16"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='17'>
+      <input id="input17"  class='appointment' date-day='13' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day17"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='18'>
+      <input id="input18"  class='appointment' date-day='14' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day18"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='19'>
+      <input id="input19"  class='appointment' date-day='15' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day19"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='20'>
+      <input id="input20"  class='appointment' date-day='16' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day20"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='21'>
+      <input id="input21"  class='appointment' date-day='17' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day21"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='22'>
+      <input id="input22"  class='appointment' date-day='18' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day22"></span>
+      <em></em>
+      </label>
+
+            <label class='day' data-day='23'>
+      <input id="input23"  class='appointment' date-day='19' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day23"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='24'>
+      <input id="input24"  class='appointment' date-day='20' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day24"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='25'>
+      <input id="input25"  class='appointment' date-day='21' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day25"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='26'>
+      <input id="input26"  class='appointment' date-day='22' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day26"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='27'>
+      <input id="input27"  class='appointment' date-day='23' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day27"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='28'>
+      <input id="input28"  class='appointment' date-day='24' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day28"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='29'>
+      <input id="input29"  class='appointment' date-day='25' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day29"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='30'>
+      <input id="input30"  class='appointment' date-day='26' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day30"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='31'>
+      <input id="input31"  class='appointment' date-day='27' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day31"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='32'>
+      <input id="input32"  class='appointment' date-day='28' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day32"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='33'>
+      <input id="input33"  class='appointment' date-day='29' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day33" class="noClick"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='34'>
+      <input id="input34"  class='appointment' date-day='30' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day34" class="noClick"></span>
+      <em></em>
+    </label>
+            <label class='day ' data-day='35'>
+      <input id="input35"  class='appointment' date-day='31' placeholder='What would you like to do?' required='true' type='text'>
+      <span id="day35" class="noClick"></span>
+      <em></em>
+    </label>
+            <label class='day' data-day='36'>
+        <input id="input36"  class='appointment' date-day='32' placeholder='What would you like to do?' required='true' type='text'>
+        <span id="day36" class="noClick"></span>
+        <em></em>
+      </label>
+            <label class='day' data-day='37'>
+        <input id="input37"  class='appointment' date-day='33' placeholder='What would you like to do?' required='true' type='text'>
+        <span id="day37" class="noClick"></span>
+        <em></em>
+      </label>
+            <label class='day invalid' data-day="38">
+        <input id="input38"  class='appointment' date-day='34' placeholder='What would you like to do?' required='true' type='text'>
+        <span id="day38" class="noClick"></span>
+        <em></em>
+      </label>
+            <label class='day invalid' data-day=' 39 '>
+        <input id="input39"  class='appointment ' date-day='35 ' placeholder='What would you like to do? ' required='true ' type='text '>
+        <span id="day39" class="noClick">0</span>
+        <em></em>
+      </label>
+            <label class='day invalid ' data-day='40 '>
+        <input id="input40"  class='appointment ' date-day='36 ' placeholder='What would you like to do? ' required='true ' type='text '>
+        <span id="day40" class="noClick">0</span>
+        <em></em>
+      </label>
+            <label class='day invalid ' data-day='41 '>
+        <input id="input41"  class='appointment ' date-day='37 ' placeholder='What would you like to do? ' required='true ' type='text '>
+        <span id="day41" class="noClick">0</span>
+        <em></em>
+      </label>
+
+            <div class='clearfix '></div>
+        </form>
+    </section>
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

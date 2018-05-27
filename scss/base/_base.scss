@@ -1,0 +1,29 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Russo One', sans-serif;
+    font-size: 62.5%;
+    overflow: auto;
+}
+
+body {
+    background-color: #F06449;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    grid-row: 1;
+    grid-column: 2/5;
+    color: white;
+}
+
+a {
+    color: black;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
