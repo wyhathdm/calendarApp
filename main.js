@@ -1,4 +1,5 @@
 // let running = true;
+let screenSize = screen.width;
 let calDaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 // let weekDays = ["Su", "M ", "Tu", "W ", "Th", "F ", "Sa"];
@@ -52,7 +53,7 @@ function displayMonth() {
     month_Year.textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(240,100,73,0.75);";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 4px rgba(240,100,73,1);";
     }
 
     for (let i = 0; i < 42; i++) {
@@ -155,7 +156,7 @@ $(".day").on('click', function(ev) {
 
     //alert(navOpen);
 });
-let screenSize = screen.width;
+
 
 function tagClick() {
 
@@ -167,11 +168,11 @@ function tagClick() {
 
     if (navOpen && !pinNav) {
         navOpen = false;
-        document.getElementById("mySidenav").style.width = "100%";
+        document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
     } else if (!navOpen) {
         if (screenSize < 1025) {
-            document.getElementById("mySidenav").style.transform = "translateX(0%)";
+            document.getElementById("mySidenav").style.transform = "translateX(0)";
 
             navOpen = true;
             sideNav.style.width = "100%";

@@ -51,10 +51,11 @@
 //forms
 .form-grid {
     display: grid;
+    grid-gap: 5rem;
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(3, 1fr);
     color: white;
-    height: 100vh;
+    height: 100%;
 }
 
 .add-event-h3 {
@@ -65,7 +66,9 @@
 }
 
 .form-1 {
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: 2/4;
     grid-row: 1;
 }
@@ -78,7 +81,9 @@
 }
 
 .form-2 {
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: 2/4;
     grid-row: 2;
 }
@@ -91,28 +96,34 @@
 }
 
 .form-3 {
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: 2/4;
     grid-row: 3;
+}
+
+.color-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/4;
+    grid-row: 4;
+    align-self: center;
+    height: 100%;
 }
 
 
 /* Start end input */
 
 .form-4 {
-    width: 70%;
-    margin: 0 auto;
-    align-content: center;
     grid-row: 5;
-    grid-column: 1/3;
+    grid-column: 2/3;
 }
 
 .form-5 {
-    width: 70%;
-    margin: 0 auto;
-    align-content: center;
     grid-row: 6;
-    grid-column: 1/3;
+    grid-column: 2/3;
 }
 
 .form-6 {
@@ -128,9 +139,23 @@
 }
 
 .form-8 {
-    width: 70%;
-    margin: 0 auto;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/3;
     grid-row: 7;
-    grid-column: 1/3;
+}
+
+.start-h3 {
+    grid-row: 5;
+    grid-column: 1;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.end-h3 {
+    grid-row: 6;
+    grid-column: 1;
+    margin: 0 auto;
+    align-self: center;
 }
