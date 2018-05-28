@@ -302,10 +302,10 @@ $(".submit").click(function(event) {
     if (radioCheckEnd != null) {
         console.log(radioCheckEnd.value);
     }
-
-    events.push(submitEvent(radioCheck, radioCheckEnd));
+    curEV = submitEvent(radioCheck, radioCheckEnd);
+    events.push(curEV);
     //console.log(events);
-    $.post("submitForm", (events).toJSON());
+    $.post("submitForm", {name:"hello", time:"fuckthis"});
     //alert(JSON.stringify(events));
     $("input").not(".submit").val("");
 });

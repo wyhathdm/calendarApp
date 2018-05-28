@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //app.use('/submitForm', formRouter);
-app.post("/submitForm", function(req, res){
-console.log(res.body);
+app.post('/submitForm', (req, res)=>{
+console.log(req.body.name);
 });
 
 // catch 404 and forward to error handler
