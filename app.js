@@ -4,6 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var fs = require("fs");
+var eventsRaw = fs.readFileSync('events.json');
+var events = [];
+if(eventsRaw.length > 0){
+events = JSON.parse(eventsRaw);
+} 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //var formRouter = require('./routes/form');
@@ -24,7 +31,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //app.use('/submitForm', formRouter);
 app.post('/submitForm', (req, res)=>{
-console.log(req.body);
+events.push(req.body);
+console.log(events);
+fs.writeFileSync('events.json', JSON.stringify(events));
 });
 
 // catch 404 and forward to error handler
