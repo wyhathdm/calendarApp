@@ -24,7 +24,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //app.use('/submitForm', formRouter);
 app.post('/submitForm', (req, res)=>{
-console.log(req.body.name);
+console.log(req.body);
 });
 
 // catch 404 and forward to error handler

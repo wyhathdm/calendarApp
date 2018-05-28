@@ -257,7 +257,7 @@ $("body").ready(function() {
 });
 
 
-function submitEvent(radioCheck, radioCheckEnd) {
+function submitEvent() {
     let eventData = {
         'name': $(".eventName").val(),
         'location': $(".locVal").val(),
@@ -266,13 +266,11 @@ function submitEvent(radioCheck, radioCheckEnd) {
         'monthYear': month_Year.textContent,
         'time': {
             'start': {
-                'num': $(".startTime").val(),
-                'AMPM': radioCheck
+                'num': $(".startTime").val()
             }
         },
         'end': {
-            'num': $(".endTime").val(),
-            'AMPM': radioCheckEnd
+            'num': $(".endTime").val()
         }
     }
     return eventData;
@@ -293,19 +291,10 @@ function watchColorPicker(event) {
 
 $(".submit").click(function(event) {
     //event.preventDefault();
-    let radioCheck = document.querySelector('[name="time-of-day"]:checked');
-    let radioCheckEnd = document.querySelector('[name="time-of-day-end"]:checked');
-    if (radioCheck != null) {
-        console.log(radioCheck.value);
-    }
-
-    if (radioCheckEnd != null) {
-        console.log(radioCheckEnd.value);
-    }
-    curEV = submitEvent(radioCheck, radioCheckEnd);
+    curEV = submitEvent();
     events.push(curEV);
     //console.log(events);
-    $.post("submitForm", {name:"hello", time:"fuckthis"});
+    $.post("submitForm", curEV);
     //alert(JSON.stringify(events));
     $("input").not(".submit").val("");
 });
