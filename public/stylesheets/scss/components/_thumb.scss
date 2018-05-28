@@ -1,13 +1,7 @@
 .thumbbtn {
     position: absolute;
-    top: .5rem;
-    right: 60px;
-    font-size: 36px;
-    margin-left: 50px;
-    &.fas.fa-thumbtack a {
-        color: $light;
-        position: absolute;
-        top: 10rem;
-        right: 10rem;
-    }
+    top: 0.5rem;
+    left: 2rem;
+    font-size: 5rem;
+    color: $light;
 }

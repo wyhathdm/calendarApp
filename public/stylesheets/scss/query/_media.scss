@@ -1,88 +1,109 @@
-//desktop
-@media only screen and (min-width:1224px) {
-    body {
-        font-size: 2rem;
+    //desktop
+    @media only screen and (min-width:1224px) {
+        body {
+            font-size: 2rem;
+        }
+        div.day {
+            margin: 2rem;
+        }
     }
-    div.day {
-        margin: 2rem;
+    
+    //ipad and tablets
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation:portrait) {
+        body {
+            font-size: 4rem;
+        }
+        div.day {
+            padding: 2.25rem 0;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        .sidenav {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
     }
-}
-
-//ipad and tablets
-@media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation:portrait) {
-    body {
-        font-size: 4rem;
+    
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation:landscape) {
+        body {
+            font-size: 2rem;
+        }
+        div.day {
+            padding: 2rem 0;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .sidenav {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
     }
-    div.day {
-        padding: 2.25rem 0;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+    
+    //phones
+    @media only screen and (min-device-width: 320px) and (max-device-width: 599px) {
+        .form-grid {
+            grid-gap: 10rem;
+        }
+        body {
+            font-size: 5rem;
+        }
+        div.day {
+            padding: 2rem 0;
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+        }
+        .sidenav {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            font-size: 6rem;
+            & h3 {
+                font-size: 5rem;
+            }
+            & .submit {
+                height: 50%;
+                width: 50%;
+            }
+            #modalDayText {
+                font-size: 5rem;
+            }
+            & a.closebtn {
+                font-size: 7.5rem;
+            }
+            & a.thumbbtn {
+                top: 1.5rem;
+                font-size: 5rem;
+            }
+        }
     }
-    .sidenav {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
+    
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px)and (min-device-height:750px) {
+        body {
+            font-size: 4rem;
+        }
+        div.day {
+            padding: 6rem 0;
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+        }
+        .sidenav {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
     }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation:landscape) {
-    body {
-        font-size: 2rem;
+    
+    //phones landscape
+    @media only screen and (min-device-width: 600px) and (max-device-width: 819px) and (orientation:landscape) {
+        body {
+            font-size: 3rem;
+        }
+        div.day {
+            padding: 1rem;
+        }
+        .form-grid {
+            height: 150vh;
+        }
     }
-    div.day {
-        padding: 2rem 0;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .sidenav {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-    }
-}
-
-//phones
-@media only screen and (min-device-width: 320px) and (max-device-width: 599px) {
-    body {
-        font-size: 5rem;
-    }
-    div.day {
-        padding: 2rem 0;
-        margin-top: 6rem;
-        margin-bottom: 6rem;
-    }
-    .sidenav {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-    }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px)and (min-device-height:750px) {
-    body {
-        font-size: 4rem;
-    }
-    div.day {
-        padding: 6rem 0;
-        margin-top: 6rem;
-        margin-bottom: 6rem;
-    }
-    .sidenav {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-    }
-}
-
-//phones landscape
-@media only screen and (min-device-width: 600px) and (max-device-width: 819px) and (orientation:landscape) {
-    body {
-        font-size: 3rem;
-    }
-    div.day {
-        padding: 1rem;
-    }
-    .form-grid {
-        height: 150vh;
-    }
-}

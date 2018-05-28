@@ -1,22 +1,26 @@
 input.submit {
-    width: 45%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    margin: 0 auto;
     border: 1px solid $gray;
     display: inline-block;
     background: white;
-    border-radius: 4px;
-    box-sizing: border-box;
+    border-radius: .4rem;
+    align-self: center;
     &:hover {
-        width: 45%;
-        padding: 12px 20px;
-        margin: 8px 0;
+        text-align: center;
+        padding: 1.2rem 2rem;
+        margin: 0 auto;
         display: inline-block;
         border: 1px solid $gray;
         cursor: pointer;
         transition: background .25s;
         background: $gray;
-        border-radius: 4px;
-        box-sizing: border-box;
+        border-radius: .4rem;
+        align-self: center;
     }
+}
+
+#sideInput.submit {
+    text-align: center;
 }

@@ -5,9 +5,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Calendar app</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -20,65 +22,66 @@
         <form id="allData" action="">
             <div class="form-grid">
                 <h3 class="add-event-h3">Event:</h3>
-                <form class="form-1" action="">
-                    <label for="add-event">
-                <input placeholder="Add Event:"id="sideInput" class='eventName' type="text" name="eventName">
+
+                <label class="form-1" for="add-event">
+                <input name="event" placeholder="Add Event:"id="sideInput" class='eventName' type="text">
                 </label>
-                </form>
+
                 <h3 class="time-h3">Time:</h3>
-                <form class="form-2" action="">
-                    <label for="add-time">
-                <input class='timeVal' placeholder="Time:"id="sideInput"type="text">
+
+                <label class="form-2" for="add-time">
+                <input name="time" class='timeVal' placeholder="Time:"id="sideInput"type="text">
                 </label>
-                </form>
+
                 <h3 class="location-h3">Location:</h3>
-                <form class="form-3" action="">
-                    <label for="add-location">
-                <input class='locVal' placeholder="Location:"id="sideInput"type="text">
+
+                <label class="form-3" for="add-location">
+                <input name="location" class='locVal' placeholder="Location:"id="sideInput"type="text">
                 </label>
-                </form>
+
 
                 <!-- start end -->
-                <form class="form-4" action="">
-                    <label for="add-start">
-                <input class='startVal' placeholder="Start:"id="sideInput"type="text">
+
+                <h3 class="start-h3">Start:</h3>
+
+                <label class="form-4" for="add-start">
+                <input name="start" class='startVal' placeholder="Start:"id="sideInput"type="text">
                 </label>
-                </form>
 
 
-                <form class="form-5" action="">
-                    <label for="add-end">
-                <input class='endVal' placeholder="End:"id="sideInput"type="text">
+                <h3 class="end-h3">End:</h3>
+
+                <label class="form-5" for="add-end">
+                <input name="end" class='endVal' placeholder="End:"id="sideInput"type="text">
                 </label>
-                </form>
                 <!-- time -->
-                <form class="form-6" action="">
-                    <label for="add-time-start">
-                    <input class='startTime' placeholder="Time Start:" id="sideInput" type="text">
-                </label>
-                </form>
 
-                <form class="form-7" action="">
-                    <label for="add-time-end">
-                        <input class='endTime' placeholder="Time End:"id="sideInput"type="text">
+
+                <label class="form-6" for="add-time-start">
+                    <input name="time-start" class='startTime' placeholder="Time Start:" id="sideInput" type="text">
+                </label>
+
+
+
+                <label class="form-7" for="add-time-end">
+                        <input name="time-end"class='endTime' placeholder="Time End:"id="sideInput"type="text">
                         </label>
-                </form>
+
                 <!-- end time and start end -->
 
                 <h3 class="color-h3">Color: </h3>
-                <form class="color-dropdown" action="">
 
-                    <input type="color" name="color-select" class="color-select" id="colorSelect">
+                <label class="color-dropdown">
+                    <input name="color" type="color" name="color-select" class="color-select" id="colorSelect">
+                </label>
 
-                    </select>
 
-                </form>
 
-                <form class="form-8" action="">
-                    <input class="submit" type="button" value="Submit">
-                </form>
-        </form>
-        </div>
+
+                <input name="submit" class="form-8 submit" type="button" value="Add Event">
+
+
+            </div>
     </div>
 
     <div id="main">
@@ -156,9 +159,10 @@
             </div>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
