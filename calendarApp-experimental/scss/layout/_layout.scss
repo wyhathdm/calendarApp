@@ -1,0 +1,161 @@
+//containers
+.container-wrap {
+    align-self: center;
+    background-color: $secondary-color;
+    height: 100%;
+    margin: 0 auto;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, .5);
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    min-height: 75%;
+    padding: 1.25rem;
+}
+
+.day-container {
+    padding-bottom: 1rem;
+}
+
+.h1-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+}
+
+.day-container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 15px;
+}
+
+.modal-container {
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: white;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+//forms
+.form-grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+    height: 100%;
+}
+
+.add-event-h3 {
+    margin: 0 auto;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.form-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.time-h3 {
+    margin: 0 auto;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.form-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+.location-h3 {
+    margin: 0 auto;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.form-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/4;
+    grid-row: 3;
+}
+
+.color-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2/4;
+    grid-row: 4;
+    align-self: center;
+    height: 100%;
+}
+
+
+/* Start end input */
+
+.form-4 {
+    grid-row: 5;
+    grid-column: 2/3;
+}
+
+.form-5 {
+    grid-row: 6;
+    grid-column: 2/3;
+}
+
+.form-6 {
+    width: 90%;
+    grid-row: 5;
+    grid-column: 3;
+}
+
+.form-7 {
+    width: 90%;
+    grid-row: 6;
+    grid-column: 3;
+}
+
+.form-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 7;
+}
+
+.start-h3 {
+    grid-row: 5;
+    grid-column: 1;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.end-h3 {
+    grid-row: 6;
+    grid-column: 1;
+    margin: 0 auto;
+    align-self: center;
+}

@@ -1,0 +1,37 @@
+.day {
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    align-self: center;
+    text-align: center;
+    background: white;
+    color: black;
+    border: gray;
+    padding: 2rem;
+    margin: .25rem;
+    &:hover {
+        cursor: pointer;
+        box-shadow: none;
+        transition: box-shadow ease-in .2s;
+    }
+    &:not(:hover) {
+        cursor: pointer;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
+        transition: box-shadow ease-out .2s;
+    }
+}
+
+div.day.nonMonth {
+    cursor: default;
+    background: $secondary-color;
+    color: rgba($dark, 0.5);
+    box-shadow: none;
+    &:hover {
+        cursor: default;
+        transition: none;
+        box-shadow: none;
+    }
+}
+
+.weekday {
+    color: white;
+}
