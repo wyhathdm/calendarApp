@@ -1,416 +1,61 @@
-body,
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Russo One', sans-serif;
-  font-size: 62.5%;
-  overflow: auto; }
+/*
+Error: File to import not found or unreadable: abstractions/mixins.
+       Load path: C:/Users/Jonathan/Documents/expressAppTest/myapp/public/stylesheets/scss
+        on line 3 of scss/main.scss
 
-body {
-  background-color: #F06449;
-  overflow: auto; }
+1: //abstractions
+2: @import "abstractions/variables";
+3: @import "abstractions/mixins";
+4: @import "abstractions/functions";
+5: //base
+6: @import "base/base";
+7: //layout
+8: @import "layout/layout";
 
-h1 {
-  font-family: 'Russo One', sans-serif;
-  grid-row: 1;
-  grid-column: 2/5;
-  color: white; }
-
-a {
-  color: black; }
-
-#main {
-  transition: margin-left .5s;
-  padding: 20px; }
-
-.container-wrap {
-  align-self: center;
-  background-color: #5BC3EB;
-  height: 100%;
-  margin: 0 auto;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5); }
-
-.calendar-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  min-height: 75%;
-  padding: 15px; }
-
-.day-container {
-  padding-bottom: 1rem; }
-
-.h1-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  text-align: center; }
-
-.day-container {
-  display: grid;
-  text-align: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  padding: 15px; }
-
-.modal-container {
-  text-align: center;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: white;
-  background: rgba(0, 0, 0, 0.4); }
-
-.form-grid {
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-rows: repeat(7, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  color: white;
-  height: 100%; }
-
-.add-event-h3 {
-  margin: 0 auto;
-  align-self: center;
-  grid-column: 1;
-  grid-row: 1; }
-
-.form-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 1; }
-
-.time-h3 {
-  margin: 0 auto;
-  align-self: center;
-  grid-column: 1;
-  grid-row: 2; }
-
-.form-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 2; }
-
-.location-h3 {
-  margin: 0 auto;
-  align-self: center;
-  grid-column: 1;
-  grid-row: 3; }
-
-.form-3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 3; }
-
-.color-dropdown {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 4;
-  align-self: center;
-  height: 100%; }
-
-/* Start end input */
-.form-4 {
-  grid-row: 5;
-  grid-column: 2/3; }
-
-.form-5 {
-  grid-row: 6;
-  grid-column: 2/3; }
-
-.form-6 {
-  width: 90%;
-  grid-row: 5;
-  grid-column: 3; }
-
-.form-7 {
-  width: 90%;
-  grid-row: 6;
-  grid-column: 3; }
-
-.form-8 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-column: 1;
-  grid-row: 7; }
-
-.start-h3 {
-  grid-row: 5;
-  grid-column: 1;
-  margin: 0 auto;
-  align-self: center; }
-
-.end-h3 {
-  grid-row: 6;
-  grid-column: 1;
-  margin: 0 auto;
-  align-self: center; }
-
-@media only screen and (min-width: 1224px) {
-  body {
-    font-size: 2rem; }
-
-  div.day {
-    margin: 2rem; } }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation: portrait) {
-  body {
-    font-size: 4rem; }
-
-  div.day {
-    padding: 2.25rem 0;
-    margin-top: 3rem;
-    margin-bottom: 3rem; }
-
-  .sidenav {
-    width: 100%;
-    height: 100%;
-    overflow: scroll; } }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1223px) and (orientation: landscape) {
-  body {
-    font-size: 2rem; }
-
-  div.day {
-    padding: 2rem 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem; }
-
-  .sidenav {
-    width: 100%;
-    height: 100%;
-    overflow: scroll; } }
-@media only screen and (min-device-width: 320px) and (max-device-width: 599px) {
-  .form-grid {
-    grid-gap: 10rem; }
-
-  body {
-    font-size: 5rem; }
-
-  div.day {
-    padding: 2rem 0;
-    margin-top: 6rem;
-    margin-bottom: 6rem; }
-
-  .sidenav {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    font-size: 6rem; }
-    .sidenav h3 {
-      font-size: 5rem; }
-    .sidenav .submit {
-      height: 50%;
-      width: 50%; }
-    .sidenav #modalDayText {
-      font-size: 5rem; }
-    .sidenav a.closebtn {
-      font-size: 7.5rem; }
-    .sidenav a.thumbbtn {
-      top: 1.5rem;
-      font-size: 5rem; } }
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (min-device-height: 750px) {
-  body {
-    font-size: 4rem; }
-
-  div.day {
-    padding: 6rem 0;
-    margin-top: 6rem;
-    margin-bottom: 6rem; }
-
-  .sidenav {
-    width: 100%;
-    height: 100%;
-    overflow: scroll; } }
-@media only screen and (min-device-width: 600px) and (max-device-width: 819px) and (orientation: landscape) {
-  body {
-    font-size: 3rem; }
-
-  div.day {
-    padding: 1rem; }
-
-  .form-grid {
-    height: 150vh; } }
-.day {
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  align-self: center;
-  text-align: center;
-  background: white;
-  color: black;
-  border: gray;
-  padding: 2rem;
-  margin: .25rem; }
-  .day:hover {
-    cursor: pointer;
-    box-shadow: none;
-    transition: box-shadow ease-in .2s; }
-  .day:not(:hover) {
-    cursor: pointer;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow ease-out .2s; }
-
-div.day.nonMonth {
-  cursor: default;
-  background: #5BC3EB;
-  color: rgba(0, 0, 0, 0.5);
-  box-shadow: none; }
-  div.day.nonMonth:hover {
-    cursor: default;
-    transition: none;
-    box-shadow: none; }
-
-.weekday {
-  color: white; }
-
-input.submit {
-  text-align: center;
-  padding: 1.2rem 2rem;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  display: inline-block;
-  background: white;
-  border-radius: .4rem;
-  align-self: center; }
-  input.submit:hover {
-    text-align: center;
-    padding: 1.2rem 2rem;
-    margin: 0 auto;
-    display: inline-block;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background .25s;
-    background: #ccc;
-    border-radius: .4rem;
-    align-self: center; }
-
-#sideInput.submit {
-  text-align: center; }
-
-.thumbbtn {
-  position: absolute;
-  top: 0.5rem;
-  left: 2rem;
-  font-size: 5rem;
-  color: #f1f1f1; }
-
-.sidenav {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: #F06449;
-  /* Black*/
-  overflow-y: auto;
-  padding-top: 60px;
-  /* Place content 60px from the top */
-  transition: all .5s;
-  /* 0.5 second transition effect to slide in the sidenav */ }
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 2rem;
-    font-size: 3.6rem; }
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #f1f1f1;
-    display: block;
-    transition: 0.3s; }
-    .sidenav a:hover {
-      color: #f1f1f1; }
-
-#modal-content {
-  background: #f1f1f1;
-  margin: 15% auto;
-  padding: 1rem;
-  border: 1px solid black;
-  width: 80%; }
-
-#modalDayText {
-  color: white;
-  text-align: center;
-  z-index: 2;
-  padding-bottom: 2rem; }
-
-#close-modal {
-  cursor: pointer;
-  border: black solid 1px;
-  color: #ccc;
-  float: right;
-  font-size: 2rem; }
-
-.close-modal:hover,
-.close-modal:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer; }
-
-/* Side input styles */
-#sideInput {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; }
-
-#floatH3 {
-  float: left; }
-
-.color-h3 {
-  margin: 0 auto;
-  grid-column: 1;
-  grid-row: 4;
-  align-self: center; }
-
-select {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; }
-
-input[type="color"] {
-  width: 90%;
-  height: 50%;
-  padding: .25rem;
-  display: inline-block;
-  border-radius: 5px;
-  box-sizing: border-box; }
-
-a.btn#grid-next {
-  align-self: center;
-  grid-row: 1;
-  grid-column: 5; }
-
-a.btn#grid-prev {
-  align-self: center;
-  grid-row: 1;
-  grid-column: 1; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+scss/main.scss:3
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:44:in `import'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: abstractions/mixins.\A        Load path: C:/Users/Jonathan/Documents/expressAppTest/myapp/public/stylesheets/scss\A         on line 3 of scss/main.scss\A \A 1: //abstractions\A 2: @import \"abstractions/variables\";\A 3: @import \"abstractions/mixins\";\A 4: @import \"abstractions/functions\";\A 5: //base\A 6: @import \"base/base\";\A 7: //layout\A 8: @import \"layout/layout\";"; }
