@@ -1,3 +1,18 @@
-.event-list {
-    background: black;
+div#event-contain {
+    background: $secondary-color;
+    transition: margin-left .5s;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    height: 25%;
+    & .event {
+        margin: 1rem 1rem;
+        background: $light;
+        text-align: center;
+        width: 25%;
+        height: 50%;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
+    }
 }

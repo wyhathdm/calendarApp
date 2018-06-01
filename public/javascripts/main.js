@@ -52,7 +52,7 @@ function displayMonth() {
     month_Year.textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(240,100,73,0.75);";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(99, 99, 99, .75);";
     }
 
     for (let i = 0; i < 42; i++) {
@@ -164,10 +164,10 @@ function tagClick() {
     let mainBody = document.getElementById("main");
     //let h1Contain = document.getElementsByClassName("h1-container");
     let monthyear = document.getElementById("month_Year");
-
-
+    let eventcontain = document.getElementById("event-contain");
     if (navOpen && !pinNav) {
         navOpen = false;
+        eventcontain.style.marginLeft = "0";
         document.getElementById("mySidenav").style.width = "100%";
         document.getElementById("main").style.marginLeft = "0";
     } else if (!navOpen) {
@@ -179,9 +179,11 @@ function tagClick() {
 
         } else {
             sideNav.style.width = "50%";
+            eventcontain.style.marginLeft = "50%";
             mainBody.style.marginLeft = "50%";
+
             navOpen = true;
-            console.log("AHH");
+
         }
     }
     if (day.textContent == currentDay && monthyear.textContent == monthNames[currentMonthForStyle] + " " + currentYear) {
@@ -202,6 +204,7 @@ function closeNav() {
         navOpen = false;
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
+        eventcontain.style.marginLeft = "0";
     }
 }
 
