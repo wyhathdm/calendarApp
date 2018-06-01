@@ -150,11 +150,12 @@ $(".day").on('click', function(ev) {
     if (!$(this).hasClass("nonMonth")) {
         day = this;
         tagClick(ev);
-    }
-    // $(this).off('click');
-
-    //alert(navOpen);
+    } // $(this).off('click');   //alert(navOpen);
 });
+
+
+
+
 let screenSize = screen.width;
 
 function tagClick() {

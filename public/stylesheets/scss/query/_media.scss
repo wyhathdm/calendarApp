@@ -42,7 +42,7 @@
     }
     
     //phones
-    @media only screen and (min-device-width: 320px) and (max-device-width: 599px) {
+    @media only screen and (min-device-width: 100px) and (max-device-width: 683px) {
         .form-grid {
             grid-gap: 10rem;
         }
