@@ -41,12 +41,12 @@
     background: $light;
     margin: 15% auto;
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid $black;
     width: 80%;
 }
 
 #modalDayText {
-    color: white;
+    color: $light;
     text-align: center;
     z-index: 2;
     padding-bottom: 2rem;
@@ -54,7 +54,7 @@
 
 #close-modal {
     cursor: pointer;
-    border: black solid 1px;
+    border: $black solid 1px;
     color: $gray;
     float: right;
     font-size: 2rem;
@@ -62,7 +62,7 @@
 
 .close-modal:hover,
 .close-modal:focus {
-    color: black;
+    color: $black;
     text-decoration: none;
     cursor: pointer;
 }

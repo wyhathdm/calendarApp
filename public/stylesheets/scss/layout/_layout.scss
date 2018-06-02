@@ -1,7 +1,7 @@
 //containers
 .container-wrap {
     align-self: center;
-    background-color: $secondary-color;
+    background-color: $tertiary-color;
     height: 100%;
     margin: 0 auto;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, .5);
@@ -9,6 +9,7 @@
 
 .calendar-container {
     display: grid;
+    background: $secondary-color;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
     min-height: 75%;

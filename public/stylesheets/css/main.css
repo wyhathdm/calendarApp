@@ -8,7 +8,7 @@ html {
   overflow: auto; }
 
 body {
-  background-color: #85C7F2;
+  background: rgba(17, 17, 17, 0.75);
   overflow: auto; }
 
 h1 {
@@ -26,13 +26,14 @@ a {
 
 .container-wrap {
   align-self: center;
-  background-color: #85C7F2;
+  background-color: rgba(17, 17, 17, 0.75);
   height: 100%;
   margin: 0 auto;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5); }
 
 .calendar-container {
   display: grid;
+  background: rgba(17, 17, 17, 0.75);
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: repeat(6, 1fr);
   min-height: 75%;
@@ -245,28 +246,26 @@ a {
   .form-grid {
     height: 150vh; } }
 .day {
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   align-self: center;
   text-align: center;
-  background: white;
+  background: #d8d8d8;
   color: black;
-  border: gray;
   padding: 2rem;
   margin: .25rem; }
   .day:hover {
     cursor: pointer;
+    background: white;
     box-shadow: none;
-    transition: box-shadow ease-in .2s; }
+    transition: background linear .25s; }
   .day:not(:hover) {
     cursor: pointer;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
     transition: box-shadow ease-out .2s; }
 
 div.day.nonMonth {
   cursor: default;
-  background: #85C7F2;
-  color: rgba(76, 76, 76, 0.5);
+  background: rgba(17, 17, 17, 0.75);
+  color: rgba(171, 171, 171, 0.5);
   box-shadow: none; }
   div.day.nonMonth:hover {
     cursor: default;
@@ -280,7 +279,7 @@ input.submit {
   text-align: center;
   padding: 1.2rem 2rem;
   margin: 0 auto;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #d8d8d8;
   display: inline-block;
   background: white;
   border-radius: .4rem;
@@ -290,10 +289,10 @@ input.submit {
     padding: 1.2rem 2rem;
     margin: 0 auto;
     display: inline-block;
-    border: 1px solid #d1d1d1;
+    border: 1px solid #d8d8d8;
     cursor: pointer;
     transition: background .25s;
-    background: #d1d1d1;
+    background: #d8d8d8;
     border-radius: .4rem;
     align-self: center; }
 
@@ -319,7 +318,7 @@ input.submit {
   top: 0;
   /* Stay at the top */
   left: 0;
-  background-color: #636363;
+  background-color: #2d2d2d;
   /* Black*/
   overflow-y: auto;
   padding-top: 60px;
@@ -349,7 +348,7 @@ input.submit {
   width: 80%; }
 
 #modalDayText {
-  color: white;
+  color: #f1f1f1;
   text-align: center;
   z-index: 2;
   padding-bottom: 2rem; }
@@ -357,7 +356,7 @@ input.submit {
 #close-modal {
   cursor: pointer;
   border: black solid 1px;
-  color: #d1d1d1;
+  color: #d8d8d8;
   float: right;
   font-size: 2rem; }
 
@@ -373,7 +372,7 @@ input.submit {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #d8d8d8;
   border-radius: 4px;
   box-sizing: border-box; }
 
@@ -391,7 +390,7 @@ select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #d8d8d8;
   border-radius: 4px;
   box-sizing: border-box; }
 
@@ -413,21 +412,58 @@ a.btn#grid-prev {
   grid-row: 1;
   grid-column: 1; }
 
-div#event-contain {
-  background: #85C7F2;
-  transition: margin-left .5s;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  height: 25%; }
-  div#event-contain .event {
-    margin: 1rem 1rem;
-    background: #f1f1f1;
+.events {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2d2d2d;
+  overflow-y: auto;
+  transition: all .5s; }
+  .events .event-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+  .events #event-h3 {
     text-align: center;
-    width: 25%;
-    height: 50%;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2); }
+    color: #f1f1f1;
+    margin-bottom: 4rem; }
+  .events .event {
+    margin: 0rem 2.5rem;
+    border-radius: 1rem;
+    background: #d8d8d8;
+    text-align: center;
+    width: 100%;
+    height: 10vh; }
+  .events .event:not(:first-child) {
+    margin-top: 3rem; }
+
+#close-event {
+  cursor: pointer;
+  border: black solid 1px;
+  color: #d8d8d8;
+  float: right;
+  font-size: 2rem; }
+
+.closebtn {
+  color: #f1f1f1;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  font-size: 3.6rem; }
+
+.event-container-transtion {
+  transition: transform 2s; }
+
+.add-event-open {
+  margin: 2.5rem auto;
+  background: #f1f1f1;
+  width: 25%;
+  height: 10%;
+  border-radius: .5rem;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

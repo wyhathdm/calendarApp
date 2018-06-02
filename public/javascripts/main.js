@@ -52,7 +52,7 @@ function displayMonth() {
     month_Year.textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px rgba(99, 99, 99, .75);";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 2px white;";
     }
 
     for (let i = 0; i < 42; i++) {

@@ -14,7 +14,7 @@ let month_Year;
 let day;
 
 let navOpen = false;
-
+let eventOpen = false
 let pinNav = false;
 
 let events = [];
@@ -53,7 +53,7 @@ function displayMonth() {
     month_Year.textContent = mon.name + (" ") + mon.year;
     if (currentMonthForStyle == mon.value && currentYearForStyle == mon.year) {
 
-        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 4px rgba(240,100,73,1);";
+        document.getElementById("day" + (currentDay + mon.startDay - 1)).style = " border:solid 4px rgba(255,0,0,0.8) ;";
     }
 
     for (let i = 0; i < 42; i++) {
@@ -186,8 +186,10 @@ function tagClick() {
     }
     if (day.textContent == currentDay && monthyear.textContent == monthNames[currentMonthForStyle] + " " + currentYear) {
         document.getElementById("modalDayText").textContent = "Set Event for " + "Today";
+        document.getElementById("event-h3").textContent = "Events for " + "Today";
     } else {
         document.getElementById("modalDayText").textContent = "Set Event for the " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
+        document.getElementById("event-h3").textContent = "Events for " + day.textContent + numEnd(day.textContent) + " of " + monthyear.textContent;
     }
 }
 
@@ -202,6 +204,20 @@ function closeNav() {
         navOpen = false;
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
+    }
+}
+
+
+function closeEvents() {
+    if (!pinNav) {
+
+        if (screenSize < 1025) {
+            document.getElementById("myEvents").style.transform = "translateX(-100%)";
+
+        }
+        navOpen = false;
+        document.getElementById("myEvents").style.transform = "translateY(100%)";
+
     }
 }
 
@@ -251,6 +267,10 @@ $(".thumbbtn").click(function() {
 
 $(".closebtn").click(function() {
     closeNav();
+});
+
+$(".add-event-open").click(function() {
+    closeEvents();
 });
 
 $("body").ready(function() {

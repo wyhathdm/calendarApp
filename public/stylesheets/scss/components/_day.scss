@@ -1,21 +1,19 @@
 .day {
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     align-self: center;
     text-align: center;
-    background: white;
+    background: $gray;
     color: black;
-    border: gray;
     padding: 2rem;
     margin: .25rem;
     &:hover {
         cursor: pointer;
+        background: white;
         box-shadow: none;
-        transition: box-shadow ease-in .2s;
+        transition: background linear .25s;
     }
     &:not(:hover) {
         cursor: pointer;
-        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
         transition: box-shadow ease-out .2s;
     }
 }

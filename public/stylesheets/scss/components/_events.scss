@@ -1,18 +1,62 @@
-div#event-contain {
-    background: $secondary-color;
-    transition: margin-left .5s;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    height: 25%;
-    & .event {
-        margin: 1rem 1rem;
-        background: $light;
-        text-align: center;
-        width: 25%;
-        height: 50%;
-        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 5px 55px 0 rgba(0, 0, 0, 0.2);
+.events {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $primary-color;
+    overflow-y: auto;
+    transition: all .5s;
+    .event-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
+    #event-h3 {
+        text-align: center;
+        color: $light;
+        margin-bottom: 4rem;
+    }
+    .event {
+        margin: 0rem 2.5rem;
+        border-radius: 1rem;
+        background: $gray;
+        text-align: center;
+        width: 100%;
+        height: 10vh;
+    }
+    .event:not(:first-child) {
+        margin-top: 3rem;
+    }
+}
+
+#close-event {
+    cursor: pointer;
+    border: $black solid 1px;
+    color: $gray;
+    float: right;
+    font-size: 2rem;
+}
+
+.closebtn {
+    color: $light;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    font-size: 3.6rem;
+}
+
+.event-container-transtion {
+    transition: transform 2s;
+}
+
+.add-event-open {
+    margin: 2.5rem auto;
+    background: $light;
+    width: 25%;
+    height: 10%;
+    border-radius: .5rem;
+    text-align: center;
 }
